@@ -1,0 +1,168 @@
+{
+  "lojinha_collection_example": {
+    "description": "Exemplo de documentos para a coleção 'lojinha' no Firestore",
+    "instructions": "Copie os documentos abaixo e adicione-os manualmente no Firebase Console",
+    "documents": [
+      {
+        "document_id": "produto_001",
+        "data": {
+          "title": "Jardim de Fé Difusor para Ambiente 200ml",
+          "attributes": {
+            "marca": "Leiloart",
+            "categoria": "Casa e Decoração",
+            "subcategoria": "Aromatizadores"
+          },
+          "auctionUrl": "https://leiloart.com/leilao/produto_001",
+          "care": "Manter em local seco e arejado. Evitar exposição direta ao sol.",
+          "createdAt": {
+            "_seconds": 1704067200,
+            "_nanoseconds": 0
+          },
+          "currentBid": 39500,
+          "deliveryInfo": {
+            "frete": "Grátis para todo o Brasil",
+            "prazo": "5-10 dias úteis",
+            "observacoes": "Produto frágil, embalagem especial"
+          },
+          "details": "Difusor de ambiente com fragrância exclusiva Jardim de Fé. Produto artesanal com essências naturais, ideal para criar um ambiente acolhedor e perfumado. Acompanha varetas de bambu para difusão.",
+          "endAt": {
+            "_seconds": 1704326400,
+            "_nanoseconds": 0
+          },
+          "images": [
+            "https://via.placeholder.com/400x400/f8f9fa/6c757d?text=Difusor+Jardim+de+Fé",
+            "https://via.placeholder.com/400x400/e9ecef/495057?text=Detalhe+1",
+            "https://via.placeholder.com/400x400/dee2e6/343a40?text=Detalhe+2"
+          ],
+          "measurements": "Altura: 25cm, Largura: 8cm, Profundidade: 8cm",
+          "size": "200ml",
+          "updatedAt": {
+            "_seconds": 1704067200,
+            "_nanoseconds": 0
+          }
+        }
+      },
+      {
+        "document_id": "produto_002",
+        "data": {
+          "title": "Prato de Sobremesas Papoula",
+          "attributes": {
+            "marca": "Cerâmica Artesanal",
+            "categoria": "Casa e Mesa",
+            "subcategoria": "Louças"
+          },
+          "auctionUrl": "https://leiloart.com/leilao/produto_002",
+          "care": "Lavar à mão com detergente neutro. Não usar no microondas.",
+          "createdAt": {
+            "_seconds": 1704066000,
+            "_nanoseconds": 0
+          },
+          "currentBid": 16000,
+          "deliveryInfo": {
+            "frete": "R$ 15,00",
+            "prazo": "3-7 dias úteis",
+            "observacoes": "Produto frágil"
+          },
+          "details": "Prato de sobremesas em cerâmica com motivos florais da papoula. Peça única, pintada à mão por artesãos locais. Ideal para servir doces e sobremesas especiais.",
+          "endAt": {
+            "_seconds": 1704325200,
+            "_nanoseconds": 0
+          },
+          "images": [
+            "https://via.placeholder.com/400x400/fff3e0/e65100?text=Prato+Papoula",
+            "https://via.placeholder.com/400x400/fce4ec/ad1457?text=Detalhe+Floral"
+          ],
+          "measurements": "Diâmetro: 20cm, Altura: 2cm",
+          "size": "Médio",
+          "updatedAt": {
+            "_seconds": 1704066000,
+            "_nanoseconds": 0
+          }
+        }
+      },
+      {
+        "document_id": "produto_003",
+        "data": {
+          "title": "Taça Vinho Eclipse Âmbar",
+          "attributes": {
+            "marca": "Cristal Premium",
+            "categoria": "Casa e Mesa",
+            "subcategoria": "Cristais"
+          },
+          "auctionUrl": "https://leiloart.com/leilao/produto_003",
+          "care": "Lavar com água morna e detergente neutro. Secar com pano macio.",
+          "createdAt": {
+            "_seconds": 1704064800,
+            "_nanoseconds": 0
+          },
+          "currentBid": 18000,
+          "deliveryInfo": {
+            "frete": "R$ 20,00",
+            "prazo": "5-8 dias úteis",
+            "observacoes": "Embalagem especial para cristais"
+          },
+          "details": "Taça para vinho em cristal âmbar com design exclusivo Eclipse. Peça sofisticada que realça a cor e o aroma dos vinhos. Ideal para ocasiões especiais e colecionadores.",
+          "endAt": {
+            "_seconds": 1704324000,
+            "_nanoseconds": 0
+          },
+          "images": [
+            "https://via.placeholder.com/400x400/fff8e1/f57f17?text=Taça+Eclipse",
+            "https://via.placeholder.com/400x400/fff3e0/ef6c00?text=Detalhe+Cristal",
+            "https://via.placeholder.com/400x400/fce4ec/e91e63?text=Reflexo+Âmbar"
+          ],
+          "measurements": "Altura: 22cm, Diâmetro da boca: 8cm, Capacidade: 350ml",
+          "size": "350ml",
+          "updatedAt": {
+            "_seconds": 1704064800,
+            "_nanoseconds": 0
+          }
+        }
+      },
+      {
+        "document_id": "produto_004",
+        "data": {
+          "title": "À Flor da Pele Eau de Parfum 60ml",
+          "attributes": {
+            "marca": "Perfumaria Artesanal",
+            "categoria": "Beleza",
+            "subcategoria": "Perfumes"
+          },
+          "auctionUrl": "https://leiloart.com/leilao/produto_004",
+          "care": "Manter em local fresco e seco, longe da luz solar direta.",
+          "createdAt": {
+            "_seconds": 1704063600,
+            "_nanoseconds": 0
+          },
+          "currentBid": 52000,
+          "deliveryInfo": {
+            "frete": "Grátis para todo o Brasil",
+            "prazo": "3-5 dias úteis",
+            "observacoes": "Produto de alta qualidade"
+          },
+          "details": "Eau de Parfum À Flor da Pele, uma fragrância única e envolvente. Notas de topo: bergamota e pêra. Notas de coração: jasmim e rosa. Notas de fundo: almíscar e sândalo. Concentração de 20% de essência.",
+          "endAt": {
+            "_seconds": 1704322800,
+            "_nanoseconds": 0
+          },
+          "images": [
+            "https://via.placeholder.com/400x400/f3e5f5/7b1fa2?text=Perfume+À+Flor",
+            "https://via.placeholder.com/400x400/fce4ec/c2185b?text=Frasco+Elegante"
+          ],
+          "measurements": "Altura: 12cm, Largura: 5cm, Profundidade: 3cm",
+          "size": "60ml",
+          "updatedAt": {
+            "_seconds": 1704063600,
+            "_nanoseconds": 0
+          }
+        }
+      }
+    ],
+    "notes": {
+      "timestamps": "Os timestamps estão em formato Unix (seconds). Use o Firebase Console para converter ou adicione como Timestamp do Firestore",
+      "currentBid": "Valores em centavos (ex: 39500 = R$ 395,00)",
+      "images": "URLs de placeholder - substitua pelas imagens reais dos produtos",
+      "endAt": "Data de fim do leilão - ajuste conforme necessário para testes"
+    }
+  }
+}

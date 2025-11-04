@@ -1,0 +1,221 @@
+/* Fonte Neue Montreal */
+@font-face {
+    font-family: 'Neue Montreal';
+    src: url('../fonts/NeueMontreal-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Lojinha Section - Estilos Principais */
+#lojinhaSection {
+    background-color: var(--bg-secondary); /* Branco puro para destaque */
+    padding: 80px 40px;
+    font-family: var(--font-primary);
+    text-align: center;
+}
+
+.lojinha-header {
+    margin-bottom: 40px;
+}
+
+.lojinha-header h2 {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--text-primary); /* Navy profundo */
+    margin: 0;
+}
+
+.lojinha-header p {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    color: var(--text-tertiary); /* Azul acinzentado */
+    margin-top: 10px;
+}
+
+/* Grid de Produtos */
+#lojinhaGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+/* Itens de Produto */
+.lojinha-item {
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.lojinha-item:hover {
+    transform: translateY(-5px);
+}
+
+.lojinha-item-image {
+    position: relative;
+    width: 100%;
+    padding-top: 125%; /* Proporção retangular (altura 125% da largura) */
+    background-color: var(--bg-light); /* Cinza prata suave */
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.lojinha-item-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.lojinha-item:hover .lojinha-item-image img {
+    transform: scale(1.03);
+}
+
+/* Ícone de Coração */
+.lojinha-item-favorite {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 2;
+}
+
+.lojinha-item-favorite .heart-icon {
+    width: 24px;
+    height: 24px;
+    fill: transparent;
+    stroke: var(--text-tertiary);
+    stroke-width: 1.5;
+    transition: fill 0.3s, stroke 0.3s;
+}
+
+.lojinha-item-favorite:hover .heart-icon {
+    fill: var(--accent-primary);
+    stroke: var(--accent-primary);
+}
+
+/* Conteúdo do Produto */
+.lojinha-item-content {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.lojinha-item-title {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-primary); /* Navy profundo */
+    margin: 0 0 5px 0;
+    line-height: 1.4;
+}
+
+.lojinha-item-price {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    color: var(--accent-primary); /* Coral para destaque */
+    font-weight: 600;
+    margin: 0;
+}
+
+.lojinha-item-category {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Botão Ver Mais */
+.lojinha-actions {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-ver-mais {
+    display: inline-block;
+    padding: 12px 32px;
+    background-color: var(--accent-primary); /* Coral */
+    color: var(--text-light);
+    border: 2px solid var(--accent-primary);
+    border-radius: 4px;
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(240, 129, 83, 0.3);
+}
+
+.btn-ver-mais:hover {
+    background-color: var(--accent-secondary); /* Chocolate no hover */
+    border-color: var(--accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(127, 97, 87, 0.4);
+}
+
+.btn-ver-mais:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(127, 97, 87, 0.3);
+}
+
+/* Estados de Loading, Vazio e Erro */
+.lojinha-loading, .lojinha-empty, .lojinha-error {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 0;
+    color: var(--text-tertiary);
+}
+
+.loading-spinner {
+    border: 4px solid var(--border-medium);
+    border-top: 4px solid var(--accent-primary); /* Coral */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #lojinhaSection {
+        padding: 60px 20px;
+    }
+
+    .lojinha-header h2 {
+        font-size: 2.5rem;
+    }
+
+    #lojinhaGrid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #lojinhaGrid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .lojinha-header h2 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Firebase - Interactive Banners</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .log {
+            background: #f5f5f5;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        .error { background: #ffebee; color: #c62828; }
+        .success { background: #e8f5e8; color: #2e7d32; }
+        .warning { background: #fff3e0; color: #ef6c00; }
+    </style>
+</head>
+<body>
+    <h1>Teste Firebase - Coleção interactiveBanners</h1>
+    <div id="logs"></div>
+    
+    <script type="module">
+        // Import Firebase
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+        const logsDiv = document.getElementById('logs');
+        
+        function addLog(message, type = 'log') {
+            const logElement = document.createElement('div');
+            logElement.className = `log ${type}`;
+            logElement.textContent = new Date().toLocaleTimeString() + ' - ' + message;
+            logsDiv.appendChild(logElement);
+            console.log(message);
+        }
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCgYULlRdEDRhxksVWB7yYUXSEeD8O98u4",
+            authDomain: "leiloart.firebaseapp.com",
+            projectId: "leiloart",
+            storageBucket: "leiloart.firebasestorage.app",
+            messagingSenderId: "807514943827",
+            appId: "1:807514943827:web:646b3e0a3851d3b075b1a6",
+            measurementId: "G-HMV38FP036"
+        };
+
+        try {
+            addLog('🚀 Inicializando Firebase...', 'log');
+            
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+            
+            addLog('✅ Firebase inicializado com sucesso', 'success');
+            
+            // Test connection to interactiveBanners collection
+            addLog('🔍 Testando conexão com coleção interactiveBanners...', 'log');
+            
+            const bannersRef = collection(db, 'interactiveBanners');
+            const snapshot = await getDocs(bannersRef);
+            
+            addLog(`📊 Coleção acessada. Total de documentos: ${snapshot.size}`, snapshot.size > 0 ? 'success' : 'warning');
+            
+            if (snapshot.size === 0) {
+                addLog('⚠️ A coleção interactiveBanners está vazia. Você precisa adicionar dados no Firestore.', 'warning');
+                addLog('💡 Estrutura esperada para cada documento:', 'log');
+                addLog('{ id: string, title: string, imageUrl: string, aspectRatio: number, focalPoint: {x: number, y: number}, active: boolean, hotspots: [...] }', 'log');
+            } else {
+                addLog('📋 Documentos encontrados:', 'success');
+                
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    addLog(`📄 ID: ${doc.id}`, 'log');
+                    addLog(`   Título: ${data.title || 'N/A'}`, 'log');
+                    addLog(`   Ativo: ${data.active !== undefined ? data.active : 'N/A'}`, 'log');
+                    addLog(`   URL da imagem: ${data.imageUrl || 'N/A'}`, 'log');
+                    addLog(`   Hotspots: ${data.hotspots ? data.hotspots.length : 0}`, 'log');
+                    addLog('---', 'log');
+                });
+            }
+            
+        } catch (error) {
+            addLog(`❌ Erro: ${error.message}`, 'error');
+            console.error('Erro completo:', error);
+        }
+    </script>
+</body>
+</html>

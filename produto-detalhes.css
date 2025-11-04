@@ -1,0 +1,781 @@
+/* Produto Detalhes - Estilos */
+
+/* Fonte Neue Montreal */
+@font-face {
+    font-family: 'Neue Montreal';
+    src: url('fonts/NeueMontreal-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Garantir scroll normal - sobrescreve o scroll animado do site */
+html {
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+}
+
+body.produto-detalhes-page {
+    background-color: #f1f1f1;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    position: relative !important;
+}
+
+/* Remover atributos que podem bloquear o scroll */
+.produto-detalhes-page #app {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 100vh;
+    position: relative !important;
+}
+
+/* Garantir que o main seja rolável */
+.produto-detalhes-main {
+    position: relative !important;
+    overflow: visible !important;
+    min-height: 100vh;
+}
+
+/* Header Fixo */
+.produto-detalhes-page #header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    border-bottom: none;
+}
+
+/* Breadcrumb */
+.breadcrumb-container {
+    padding: 120px 0 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #000;
+}
+
+.breadcrumb .separator {
+    color: #999;
+}
+
+.breadcrumb span:last-child {
+    color: #000;
+    font-weight: 500;
+}
+
+/* Loading State */
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 40px;
+    background-color: #f1f1f1;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #e0e0e0;
+    border-top: 4px solid #2f2f2f;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-state p {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #666;
+    font-size: 16px;
+}
+
+/* Error State */
+.error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 40px;
+    background-color: #f1f1f1;
+}
+
+.error-content {
+    text-align: center;
+    max-width: 500px;
+}
+
+.error-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.error-content p {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.btn-voltar {
+    display: inline-block;
+    padding: 14px 36px;
+    background-color: #2f2f2f;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-voltar:hover {
+    background-color: #1a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Product Details Section */
+.produto-detalhes-section {
+    padding: 60px 0;
+    background-color: #f1f1f1;
+}
+
+.produto-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+/* Gallery */
+.produto-gallery {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.gallery-main {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(47, 47, 47, 0.85);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-nav svg {
+    stroke: #ffffff;
+}
+
+.gallery-nav:hover {
+    background-color: rgba(26, 26, 26, 0.95);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-nav.prev {
+    left: 20px;
+}
+
+.gallery-nav.next {
+    right: 20px;
+}
+
+.gallery-nav svg {
+    width: 24px;
+    height: 24px;
+}
+
+.gallery-nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.gallery-nav:disabled:hover {
+    transform: translateY(-50%) scale(1);
+}
+
+.gallery-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+}
+
+.thumbnail {
+    aspect-ratio: 1;
+    background-color: #ffffff;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.thumbnail:hover {
+    border-color: #999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.thumbnail.active {
+    border-color: #000;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Product Info */
+.produto-info {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.produto-header {
+    margin-bottom: 30px;
+}
+
+.produto-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #000;
+}
+
+.produto-category {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #2f2f2f;
+    color: #ffffff;
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    border-radius: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Price Section */
+.produto-price-section {
+    padding: 32px;
+    background: linear-gradient(135deg, #2f2f2f 0%, #1a1a1a 100%);
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.price-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.price-label {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.price-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.timer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timer-label {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 0.5px;
+}
+
+.timer-value {
+    font-size: 26px;
+    font-weight: 600;
+    color: #FFD700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Attributes */
+.produto-atributos {
+    margin-bottom: 45px;
+    padding-bottom: 45px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #2f2f2f;
+}
+
+.attributes-list {
+    display: grid;
+    gap: 15px;
+}
+
+.attribute-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.attribute-item:last-child {
+    border-bottom: none;
+}
+
+.attribute-label {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 500;
+    color: #777;
+    font-size: 15px;
+}
+
+.attribute-value {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-align: right;
+    font-size: 15px;
+    max-width: 60%;
+}
+
+/* Description */
+.produto-description,
+.produto-care,
+.produto-delivery {
+    margin-bottom: 45px;
+    padding-bottom: 45px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.produto-delivery {
+    border-bottom: none;
+}
+
+.description-content {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #4a4a4a;
+}
+
+.description-content p {
+    margin-bottom: 12px;
+}
+
+.description-content br {
+    display: block;
+    margin: 10px 0;
+    content: "";
+}
+
+/* Actions */
+.produto-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 35px;
+    margin-top: 40px;
+}
+
+.btn {
+    padding: 16px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-primary {
+    background-color: #2f2f2f;
+    color: #fff;
+    flex: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+    background-color: #1a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: #2f2f2f;
+    border: 2px solid #2f2f2f;
+    padding: 14px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.btn-secondary:hover {
+    background-color: #2f2f2f;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary .heart-icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    transition: fill 0.3s ease;
+}
+
+.btn-secondary.favorited .heart-icon {
+    fill: currentColor;
+}
+
+/* Share */
+.produto-share {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.share-label {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    color: #777;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.share-btn {
+    width: 44px;
+    height: 44px;
+    background-color: #ffffff;
+    border: 2px solid #e5e5e5;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.share-btn:hover {
+    background-color: #2f2f2f;
+    color: #fff;
+    border-color: #2f2f2f;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.share-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.share-btn[data-network="whatsapp"]:hover {
+    background-color: #25D366;
+}
+
+.share-btn[data-network="facebook"]:hover {
+    background-color: #1877F2;
+}
+
+.share-btn[data-network="twitter"]:hover {
+    background-color: #1DA1F2;
+}
+
+/* Related Products */
+.related-products-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.section-title-main {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #1a1a1a;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title-main::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #2f2f2f;
+}
+
+.related-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.related-product-item {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #e5e5e5;
+}
+
+.related-product-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    border-color: #d0d0d0;
+}
+
+.related-product-image {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.related-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.related-product-item:hover .related-product-image img {
+    transform: scale(1.05);
+}
+
+.related-product-info {
+    padding: 20px;
+}
+
+.related-product-title {
+    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.related-product-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2f2f2f;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .produto-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .produto-gallery {
+        position: relative;
+        top: 0;
+    }
+    
+    .related-products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .breadcrumb-container {
+        padding: 100px 0 15px;
+    }
+    
+    .breadcrumb {
+        font-size: 12px;
+        gap: 5px;
+    }
+    
+    .produto-detalhes-section {
+        padding: 30px 20px;
+    }
+    
+    .produto-info {
+        padding: 24px;
+    }
+    
+    .produto-title {
+        font-size: 26px;
+    }
+    
+    .price-value {
+        font-size: 36px;
+    }
+    
+    .timer-value {
+        font-size: 22px;
+    }
+    
+    .produto-actions {
+        flex-direction: column;
+    }
+    
+    .btn-secondary {
+        width: 100%;
+    }
+    
+    .gallery-nav {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .gallery-nav.prev {
+        left: 10px;
+    }
+    
+    .gallery-nav.next {
+        right: 10px;
+    }
+    
+    .related-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .produto-share {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .section-title {
+        font-size: 20px;
+    }
+    
+    .section-title-main {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .produto-title {
+        font-size: 22px;
+    }
+    
+    .price-value {
+        font-size: 32px;
+    }
+    
+    .section-title {
+        font-size: 18px;
+    }
+    
+    .section-title-main {
+        font-size: 24px;
+    }
+    
+    .produto-info {
+        padding: 20px;
+    }
+    
+    .produto-price-section {
+        padding: 24px;
+    }
+    
+    .related-products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

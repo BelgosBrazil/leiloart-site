@@ -1,0 +1,106 @@
+{
+  "interactiveBanners": [
+    {
+      "id": "banner1",
+      "title": "Coleção Vintage",
+      "imageUrl": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=675&fit=crop",
+      "aspectRatio": 1.7777777777777777,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "active": true,
+      "order": 1,
+      "hotspots": [
+        {
+          "id": "hotspot1",
+          "position": {
+            "x": 0.3,
+            "y": 0.6
+          },
+          "zIndex": 10,
+          "product": {
+            "id": "product1",
+            "title": "Cadeira Vintage Escandinava",
+            "imageUrl": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=300&h=400&fit=crop",
+            "currentBid": "R$ 850,00",
+            "details": "Cadeira em madeira maciça com design escandinavo dos anos 60. Peça única em excelente estado de conservação."
+          }
+        },
+        {
+          "id": "hotspot2",
+          "position": {
+            "x": 0.7,
+            "y": 0.4
+          },
+          "zIndex": 10,
+          "product": {
+            "id": "product2",
+            "title": "Mesa de Centro Retrô",
+            "imageUrl": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300&h=400&fit=crop",
+            "currentBid": "R$ 1.200,00",
+            "details": "Mesa de centro em madeira com pés palito, característica do design dos anos 50."
+          }
+        }
+      ]
+    },
+    {
+      "id": "banner2",
+      "title": "Arte Contemporânea",
+      "imageUrl": "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1200&h=675&fit=crop",
+      "aspectRatio": 1.7777777777777777,
+      "focalPoint": {
+        "x": 0.6,
+        "y": 0.3
+      },
+      "active": true,
+      "order": 2,
+      "hotspots": [
+        {
+          "id": "hotspot3",
+          "position": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "zIndex": 10,
+          "product": {
+            "id": "product3",
+            "title": "Pintura Abstrata Original",
+            "imageUrl": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=400&fit=crop",
+            "currentBid": "R$ 3.500,00",
+            "details": "Obra original em tela, técnica mista. Artista contemporâneo renomado."
+          }
+        }
+      ]
+    },
+    {
+      "id": "banner3",
+      "title": "Joias Exclusivas",
+      "imageUrl": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&h=675&fit=crop",
+      "aspectRatio": 1.7777777777777777,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "active": true,
+      "order": 3,
+      "hotspots": [
+        {
+          "id": "hotspot4",
+          "position": {
+            "x": 0.5,
+            "y": 0.6
+          },
+          "zIndex": 10,
+          "product": {
+            "id": "product4",
+            "title": "Anel de Diamante Vintage",
+            "imageUrl": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=300&h=400&fit=crop",
+            "currentBid": "R$ 8.500,00",
+            "details": "Anel em ouro 18k com diamante central de 1.5 quilates. Peça única dos anos 40."
+          }
+        }
+      ]
+    }
+  ]
+}

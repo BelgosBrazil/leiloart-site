@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Banners Slider</title>
+    <link rel="stylesheet" href="interactive-banners-slider.css">
+</head>
+<body>
+    <!-- Container principal do slider -->
+    <section class="interactive-banners-slider" id="interactiveBannersSlider">
+        <!-- Carousel container -->
+        <div class="carousel-container">
+            <div class="carousel-content" id="carouselContent">
+                <!-- Os banners serão inseridos aqui via JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Paginação -->
+        <div class="carousel-pagination" id="carouselPagination">
+            <!-- Os pontos de paginação serão inseridos aqui via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Modal para mostrar detalhes do produto -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Conteúdo do produto será inserido aqui -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Template para banner interativo -->
+    <template id="bannerTemplate">
+        <div class="carousel-item">
+            <div class="banner-container">
+                <!-- Vignette lateral -->
+                <div class="vignette-overlay">
+                    <div class="vignette-left"></div>
+                    <div class="vignette-right"></div>
+                </div>
+                
+                <!-- Imagem do banner -->
+                <img class="banner-image" alt="" loading="lazy">
+                
+                <!-- Título do banner -->
+                <div class="banner-title">
+                    <h3></h3>
+                </div>
+                
+                <!-- Container para hotspots -->
+                <div class="hotspots-container">
+                    <!-- Hotspots serão inseridos aqui -->
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Template para hotspot -->
+    <template id="hotspotTemplate">
+        <div class="hotspot">
+            <button class="hotspot-button" aria-label="Ver produto">
+                <span>+</span>
+            </button>
+        </div>
+    </template>
+
+    <!-- Template para modal de produto -->
+    <template id="productModalTemplate">
+        <div class="product-card">
+            <div class="product-header">
+                <h4 class="product-title"></h4>
+                <p class="product-bid"></p>
+            </div>
+            <div class="product-content">
+                <div class="product-image-container">
+                    <img class="product-image" alt="">
+                </div>
+                <p class="product-details"></p>
+                <div class="product-actions">
+                    <button class="product-button">Ver detalhes</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="interactive-banners-slider.js"></script>
+</body>
+</html>

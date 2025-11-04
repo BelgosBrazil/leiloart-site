@@ -1,0 +1,23 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f0f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#grad4)"/>
+  
+  <!-- Travel mug body -->
+  <rect x="170" y="100" width="60" height="120" rx="30" ry="30" fill="#dc143c"/>
+  <rect x="175" y="105" width="50" height="110" rx="25" ry="25" fill="#fff"/>
+  <rect x="180" y="110" width="40" height="100" rx="20" ry="20" fill="#333"/>
+  
+  <!-- Lid -->
+  <ellipse cx="200" cy="100" rx="30" ry="8" fill="#dc143c"/>
+  <ellipse cx="200" cy="95" rx="25" ry="6" fill="#fff"/>
+  
+  <!-- Handle -->
+  <path d="M 230 130 Q 250 150 230 170" stroke="#dc143c" stroke-width="8" fill="none"/>
+  
+  <text x="200" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#666">Lifestyle</text>
+</svg>

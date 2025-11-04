@@ -1,0 +1,22 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f5dc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e6e6d3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#grad3)"/>
+  
+  <!-- Lamp base -->
+  <ellipse cx="200" cy="220" rx="40" ry="15" fill="#8b4513"/>
+  <rect x="195" y="180" width="10" height="40" fill="#8b4513"/>
+  
+  <!-- Lamp shade -->
+  <path d="M 150 120 L 250 120 L 230 180 L 170 180 Z" fill="#f4e4c1" stroke="#d4af37" stroke-width="2"/>
+  
+  <!-- Light effect -->
+  <circle cx="200" cy="150" r="30" fill="#fff9c4" opacity="0.6"/>
+  <circle cx="200" cy="150" r="20" fill="#fff9c4" opacity="0.4"/>
+  
+  <text x="200" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#8b4513">Homeware</text>
+</svg>

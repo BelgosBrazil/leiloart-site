@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="google" content="notranslate">
+    
+    <title>Detalhes do Produto | LEILOART</title>
+    <meta name="description" content="Detalhes completos do produto em leilão">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link href="images/favicon.ico" rel="shortcut icon">
+    
+    <link href="css/style.css" rel="stylesheet">
+    <link href="produto-detalhes.css" rel="stylesheet">
+    
+    <style>
+        /* Garantir scroll normal - sobrescreve estilos do site principal */
+        html, body {
+            overflow: auto !important;
+            overflow-x: hidden !important;
+            height: auto !important;
+        }
+        
+        #app {
+            overflow: visible !important;
+            height: auto !important;
+        }
+        
+        /* Garantir que o conteúdo seja rolável */
+        .produto-detalhes-main {
+            position: relative !important;
+        }
+        
+        /* Prevenir bloqueio de scroll por transforms */
+        body > * {
+            will-change: unset !important;
+        }
+        
+        /* Header com backdrop blur no scroll */
+        .produto-detalhes-page #header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="produto-detalhes-page">
+    <div id="app">
+        <!-- Header -->
+        <header id="header" class="header">
+            <div class="container">
+                <a href="/" class="logo">LEILOART</a>
+                <nav data-mobile="">
+                    <div class="mask"></div>
+                    <div class="content">
+                        <ul id="menu-main-1" class="menu">
+                            <li class="menu-item"><a href="/">Home</a></li>
+                            <li class="menu-item"><a href="/#destaques-container">Destaques</a></li>
+                            <li class="menu-item"><a href="/#interactiveBannersSlider">Galeria</a></li>
+                            <li class="menu-item"><a href="/#lojinhaSection">Loja</a></li>
+                            <li class="menu-item"><a href="/#footer">Contato</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <nav data-desktop="">
+                    <ul id="menu-main-2" class="menu">
+                        <li class="menu-item"><a href="/">Home</a></li>
+                        <li class="menu-item"><a href="/#destaques-container">Destaques</a></li>
+                        <li class="menu-item"><a href="/#interactiveBannersSlider">Galeria</a></li>
+                        <li class="menu-item"><a href="/#lojinhaSection">Loja</a></li>
+                        <li class="menu-item"><a href="/#footer">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="trigger">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Conteúdo Principal -->
+        <main class="produto-detalhes-main">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb-container">
+                <div class="container">
+                    <nav class="breadcrumb">
+                        <a href="/">Home</a>
+                        <span class="separator">/</span>
+                        <a href="/#lojinhaSection">Produtos</a>
+                        <span class="separator">/</span>
+                        <span id="breadcrumb-title">Carregando...</span>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading-state" class="loading-state">
+                <div class="loading-spinner"></div>
+                <p>Carregando detalhes do produto...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="error-state" class="error-state" style="display: none;">
+                <div class="error-content">
+                    <h2>Produto não encontrado</h2>
+                    <p>O produto que você está procurando não existe ou foi removido.</p>
+                    <a href="/#lojinhaSection" class="btn-voltar">Voltar para a loja</a>
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <section id="product-section" class="produto-detalhes-section" style="display: none;">
+                <div class="container">
+                    <div class="produto-layout">
+                        <!-- Galeria de Imagens -->
+                        <div class="produto-gallery">
+                            <div class="gallery-main">
+                                <img id="main-image" src="" alt="" class="main-image">
+                                <button class="gallery-nav prev" id="gallery-prev" aria-label="Imagem anterior">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="15 18 9 12 15 6"></polyline>
+                                    </svg>
+                                </button>
+                                <button class="gallery-nav next" id="gallery-next" aria-label="Próxima imagem">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="gallery-thumbnails" id="gallery-thumbnails">
+                                <!-- Thumbnails serão inseridos aqui via JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- Informações do Produto -->
+                        <div class="produto-info">
+                            <div class="produto-header">
+                                <h1 id="product-title" class="produto-title">Carregando...</h1>
+                                <div id="product-category" class="produto-category"></div>
+                            </div>
+
+                            <div class="produto-price-section">
+                                <div class="price-info">
+                                    <span class="price-label">Lance atual</span>
+                                    <span id="product-price" class="price-value">R$ 0,00</span>
+                                </div>
+                                <div id="timer-section" class="timer-info">
+                                    <span class="timer-label">Encerra em:</span>
+                                    <span id="product-timer" class="timer-value">Calculando...</span>
+                                </div>
+                            </div>
+
+                            <div class="produto-atributos">
+                                <h2 class="section-title">Atributos</h2>
+                                <div id="product-attributes" class="attributes-list">
+                                    <!-- Atributos serão inseridos aqui via JavaScript -->
+                                </div>
+                            </div>
+
+                            <div class="produto-description">
+                                <h2 class="section-title">Detalhes</h2>
+                                <div id="product-details" class="description-content">
+                                    <!-- Detalhes serão inseridos aqui via JavaScript -->
+                                </div>
+                            </div>
+
+                            <div id="care-section" class="produto-care" style="display: none;">
+                                <h2 class="section-title">Cuidados</h2>
+                                <div id="product-care" class="description-content">
+                                    <!-- Cuidados serão inseridos aqui via JavaScript -->
+                                </div>
+                            </div>
+
+                            <div id="delivery-section" class="produto-delivery" style="display: none;">
+                                <h2 class="section-title">Entrega</h2>
+                                <div id="product-delivery" class="description-content">
+                                    <!-- Info de entrega será inserida aqui via JavaScript -->
+                                </div>
+                            </div>
+
+                            <div class="produto-actions">
+                                <button id="btn-fazer-lance" class="btn btn-primary btn-fazer-lance">
+                                    Fazer Lance
+                                </button>
+                                <button id="btn-favoritar" class="btn btn-secondary btn-favoritar">
+                                    <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                    </svg>
+                                    Favoritar
+                                </button>
+                            </div>
+
+                            <div class="produto-share">
+                                <span class="share-label">Compartilhar:</span>
+                                <div class="share-buttons">
+                                    <button class="share-btn" data-network="whatsapp" aria-label="Compartilhar no WhatsApp">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="share-btn" data-network="facebook" aria-label="Compartilhar no Facebook">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="share-btn" data-network="twitter" aria-label="Compartilhar no Twitter">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Produtos Relacionados -->
+            <section id="related-products" class="related-products-section" style="display: none;">
+                <div class="container">
+                    <h2 class="section-title-main">Produtos Relacionados</h2>
+                    <div id="related-products-grid" class="related-products-grid">
+                        <!-- Produtos relacionados serão inseridos aqui via JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer id="footer" class="footer">
+            <div class="container container--full white">
+                <div class="scrolltitle">
+                    <div class="scrolltitle__item"><div class="title">ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + </div></div>
+                    <div class="scrolltitle__item"><div class="title">ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + </div></div>
+                    <div class="scrolltitle__item"><div class="title">ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + DESIGN + SOFISTICAÇÃO + DESIGN + ELEGÂNCIA + SOFISTICAÇÃO + DESIGN + </div></div>
+                </div>
+            </div>
+            <div class="container container--medium white">
+                <div class="columns columns--reverse">
+                    <div class="columns__item">
+                        <ul id="menu-main" class="menu">
+                            <li class="menu-item"><a href="/">Home</a></li>
+                            <li class="menu-item"><a href="/#destaques-container">Destaques</a></li>
+                            <li class="menu-item"><a href="/#interactiveBannersSlider">Galeria</a></li>
+                            <li class="menu-item"><a href="/#lojinhaSection">Loja</a></li>
+                            <li class="menu-item"><a href="/#footer">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="columns__item">
+                        <a href="mailto:contato@leiloart.com.br">
+                            <div class="supertitle"><strong>FALE CONOSCO</strong></div>
+                            <div class="mail">contato@leiloart.com.br</div>
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                <div class="columns">
+                    <div class="columns__item">
+                        <ul id="menu-legal" class="legal">
+                            <li><a href="/privacy-policy/">Termos de privacidade</a></li>
+                        </ul>
+                    </div>
+                    <hr data-mobile="">
+                    <div class="columns__item">
+                        <div class="copyright">© 2025 Leiloart. All Rights Reserved</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+        import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js';
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCgYULlRdEDRhxksVWB7yYUXSEeD8O98u4",
+            authDomain: "leiloart.firebaseapp.com",
+            projectId: "leiloart",
+            storageBucket: "leiloart.firebasestorage.app",
+            messagingSenderId: "807514943827",
+            appId: "1:807514943827:web:646b3e0a3851d3b075b1a6",
+            measurementId: "G-HMV38FP036"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const analytics = getAnalytics(app);
+
+        // Make Firebase available globally
+        window.firebaseApp = app;
+        window.firebaseDb = db;
+        window.firebaseAnalytics = analytics;
+    </script>
+
+    <script src="produto-detalhes.js"></script>
+</body>
+</html>
+
