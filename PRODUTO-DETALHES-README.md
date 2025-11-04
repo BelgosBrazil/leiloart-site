@@ -180,5 +180,5 @@ Exibe todos os detalhes do produto com layout completo.
 
 ## Suporte
 
-Para dúvidas ou problemas, entre em contato através de contato@leiloart.com.br
+Para dúvidas ou problemas, entre em contato através de contato@myne.com.br
 

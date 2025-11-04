@@ -1,4 +1,4 @@
-# 📊 Estrutura de Dados do Firestore - LEILOART
+# 📊 Estrutura de Dados do Firestore - MYNE
 
 ## 📦 Coleção: `lojinha`
 
@@ -477,10 +477,10 @@ Este é o objeto exato que você forneceu:
   endAt: Timestamp(30 de outubro de 2025 às 16:00:00 UTC-3),
   
   images: [
-    "https://firebasestorage.googleapis.com/v0/b/leiloart.firebasestorage.app/o/lojinha%2FolnliUMBbmpInu2ZDdWm%2F1760640155160_0_sofa_1.webp?alt=media&token=9cfadf7d-4eee-4469-b02b-fd34e8d31009",
-    "https://firebasestorage.googleapis.com/v0/b/leiloart.firebasestorage.app/o/lojinha%2FolnliUMBbmpInu2ZDdWm%2F1760640156688_1_sofa_2.webp?alt=media&token=88812450-2961-4c39-b777-f2f73d9874fa",
-    "https://firebasestorage.googleapis.com/v0/b/leiloart.firebasestorage.app/o/lojinha%2FolnliUMBbmpInu2ZDdWm%2F1760640157616_2_sofa_3.webp?alt=media&token=f38cead7-d9c9-48af-a861-b0cc1457ce10",
-    "https://firebasestorage.googleapis.com/v0/b/leiloart.firebasestorage.app/o/lojinha%2FolnliUMBbmpInu2ZDdWm%2F1760640159565_3_sofa_4.webp?alt=media&token=30e52254-85d8-4243-81fe-c8f1961cc4a8"
+    "https://firebasestorage.googleapis.com/v0/b/myne.firebasestorage.app/o/lojinha%2FolnliUMBbmpInu2ZDdWm%2F1760640155160_0_sofa_1.webp?alt=media&token=9cfadf7d-4eee-4469-b02b-fd34e8d31009",
+    "https://firebasestorage.googleapis.com/v0/b/myne.firebasestorage.app/o/lojinha%2FolnliUMBbmpInu2ZDdWm%2F1760640156688_1_sofa_2.webp?alt=media&token=88812450-2961-4c39-b777-f2f73d9874fa",
+    "https://firebasestorage.googleapis.com/v0/b/myne.firebasestorage.app/o/lojinha%2FolnliUMBbmpInu2ZDdWm%2F1760640157616_2_sofa_3.webp?alt=media&token=f38cead7-d9c9-48af-a861-b0cc1457ce10",
+    "https://firebasestorage.googleapis.com/v0/b/myne.firebasestorage.app/o/lojinha%2FolnliUMBbmpInu2ZDdWm%2F1760640159565_3_sofa_4.webp?alt=media&token=30e52254-85d8-4243-81fe-c8f1961cc4a8"
   ],
   
   measurements: [

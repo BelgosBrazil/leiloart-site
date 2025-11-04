@@ -2,7 +2,7 @@
 
 ## ✅ O QUE FOI IMPLEMENTADO
 
-Um sistema completo de página de detalhes de produtos para o site LEILOART.
+Um sistema completo de página de detalhes de produtos para o site MYNE.
 
 **Antes**: Clicar no produto → Redireciona para link externo  
 **Agora**: Clicar no produto → Página de detalhes completa → Usuário decide se quer dar o lance
@@ -242,7 +242,7 @@ console.log(window.produtoDetalhes.product);
 1. 📖 Leia README-PRODUTO-DETALHES.md
 2. 🧪 Consulte TESTE-PRODUTO-DETALHES.md
 3. 💡 Veja exemplos em exemplos-produtos-firestore.js
-4. 📧 Email: contato@leiloart.com.br
+4. 📧 Email: contato@myne.com.br
 
 ---
 
@@ -319,7 +319,7 @@ Use `exemplos-produtos-firestore.js`
 ---
 
 <div align="center">
-  <strong>Sistema desenvolvido para LEILOART</strong>
+  <strong>Sistema desenvolvido para MYNE</strong>
   <br>
   <em>Transformando cliques em conversões! 🎯</em>
 </div>

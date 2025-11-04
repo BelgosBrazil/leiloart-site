@@ -2,7 +2,7 @@
 
 ## 🎉 Resumo da Implementação
 
-Foi implementado com sucesso um sistema completo de página de detalhes de produtos para o site LEILOART. Agora, quando os usuários clicam em um produto, eles são redirecionados para uma página dedicada com informações completas, ao invés de irem diretamente para um link externo.
+Foi implementado com sucesso um sistema completo de página de detalhes de produtos para o site MYNE. Agora, quando os usuários clicam em um produto, eles são redirecionados para uma página dedicada com informações completas, ao invés de irem diretamente para um link externo.
 
 ## 📁 Arquivos Criados
 
@@ -355,7 +355,7 @@ Se encontrar algum problema:
 - `TESTE-PRODUTO-DETALHES.md` - Guia de testes e troubleshooting
 
 **Contato:**
-- Email: contato@leiloart.com.br
+- Email: contato@myne.com.br
 
 ## 🎓 Tecnologias Utilizadas
 

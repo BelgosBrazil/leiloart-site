@@ -172,7 +172,7 @@
 
 #### Aplicações:
 - 🎨 **Background do loader**: Bege elegante (`var(--bg-primary)`)
-- 📌 **Título LEILOART**: Navy profundo
+- 📌 **Título MYNE**: Navy profundo
 - 📝 **Subtítulo**: Cinza carvão
 - ✨ Mantidas todas as animações suaves
 

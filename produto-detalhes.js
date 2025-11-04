@@ -112,7 +112,7 @@ class ProdutoDetalhes {
         document.getElementById('product-section').style.display = 'block';
         
         // Atualiza título da página e breadcrumb
-        document.title = `${this.product.title} | LEILOART`;
+        document.title = `${this.product.title} | MYNE`;
         document.getElementById('breadcrumb-title').textContent = this.product.title;
         
         // Renderiza imagens

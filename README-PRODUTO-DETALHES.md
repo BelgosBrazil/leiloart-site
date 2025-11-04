@@ -1,4 +1,4 @@
-# 🎯 Sistema de Página de Detalhes do Produto - LEILOART
+# 🎯 Sistema de Página de Detalhes do Produto - MYNE
 
 ## 📋 Índice
 
@@ -13,7 +13,7 @@
 
 ## 🎉 Visão Geral
 
-Sistema completo de página de detalhes de produtos implementado para o site LEILOART. Quando um usuário clica em um produto, ele é redirecionado para uma página dedicada com informações completas, galeria de imagens, atributos detalhados e produtos relacionados.
+Sistema completo de página de detalhes de produtos implementado para o site MYNE. Quando um usuário clica em um produto, ele é redirecionado para uma página dedicada com informações completas, galeria de imagens, atributos detalhados e produtos relacionados.
 
 ### ✨ Principais Funcionalidades
 
@@ -351,7 +351,7 @@ limit(8) // Altere de 5 para 8
 
 ### Recursos
 
-- 📧 Email: contato@leiloart.com.br
+- 📧 Email: contato@myne.com.br
 - 📚 Documentação: Ver arquivos `*-README.md`
 - 🧪 Testes: Ver `TESTE-PRODUTO-DETALHES.md`
 - 💡 Exemplos: Ver `exemplos-produtos-firestore.js`
@@ -397,7 +397,7 @@ console.log(document.querySelectorAll('.related-product-item').length);
 
 ## 📜 Licença
 
-Este projeto faz parte do sistema LEILOART.
+Este projeto faz parte do sistema MYNE.
 
 ---
 
@@ -432,6 +432,6 @@ O sistema está **completo e pronto para uso**! 🚀
 ---
 
 <div align="center">
-  <strong>Desenvolvido com ❤️ para LEILOART</strong>
+  <strong>Desenvolvido com ❤️ para MYNE</strong>
 </div>
 

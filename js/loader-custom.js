@@ -1,4 +1,4 @@
-// Custom loader animation for LEILOART
+// Custom loader animation for MYNE
 (function() {
     'use strict';
     
@@ -23,7 +23,7 @@
         
         // Sequência de animação
         const animationSequence = async () => {
-            // Passo 1: Mostrar o título LEILOART no centro
+            // Passo 1: Mostrar o título MYNE no centro
             await delay(500);
             loaderText.classList.add('show');
             

@@ -10,7 +10,7 @@ Este documento ilustra visualmente como o sistema funciona do ponto de vista do 
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                    LEILOART                         │
+│                    MYNE                         │
 │  [Home] [Destaques] [Galeria] [Loja] [Contato]    │
 └─────────────────────────────────────────────────────┘
 
@@ -60,7 +60,7 @@ Este documento ilustra visualmente como o sistema funciona do ponto de vista do 
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                        LEILOART                             │
+│                        MYNE                             │
 │    [Home] [Destaques] [Galeria] [Loja] [Contato]          │
 └─────────────────────────────────────────────────────────────┘
 
