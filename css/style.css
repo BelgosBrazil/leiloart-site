@@ -22611,7 +22611,8 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
 }
 
 .production__info .columns__item--center {
-    width: 15vw
+    width: 15vw;
+    overflow: visible;
 }
 
 @media all and (max-width: 1024px) and (orientation: portrait) {
@@ -22644,7 +22645,7 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
     position: relative;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    overflow: visible;
 }
 
 @media all and (max-width: 1024px) and (orientation: portrait) {
@@ -22652,7 +22653,8 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
     .production__info .fix--2 {
         width: 100%;
         height: auto;
-        padding: 1.5rem 0
+        padding: 1.5rem 0;
+        overflow: visible;
     }
 }
 
@@ -22696,9 +22698,10 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100vh;
+    width: 80vh;
     text-align: center;
-    transform: translateX(-50%) translateY(-50%) rotate(-90deg)
+    transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    padding: 0;
 }
 
 @media all and (max-width: 1024px) and (orientation: portrait) {
@@ -22708,7 +22711,8 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
         left: 0;
         top: 0;
         text-align: center;
-        width: 100%
+        width: 100%;
+        padding: 0 20px;
     }
 }
 
@@ -22717,20 +22721,33 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
 }
 
 .production__info .supertitle {
-    font-size: 5.5vw;
+    font-size: 4vw;
 }
 
 .production__info .supertitle .line strong {
-    font-size: 6vw;
+    font-size: 4.5vw;
 }
 
 @media all and (max-width: 1024px) and (orientation: portrait) {
     .production__info .supertitle {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+    
+    .production__info .supertitle p {
+        white-space: normal;
+        word-wrap: break-word;
+    }
+    
+    .production__info .supertitle .line {
+        height: auto;
     }
     
     .production__info .supertitle .line strong {
-        font-size: 2.8rem;
+        font-size: 2rem;
+        white-space: normal;
+        word-wrap: break-word;
     }
 }
 
