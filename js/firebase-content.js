@@ -97,10 +97,11 @@ class FirebaseContentManager {
         // Create content structure
         const contentDiv = document.createElement('div');
         contentDiv.className = 'content';
+        contentDiv.style.padding = '3vw 5vw !important';
         
         contentDiv.innerHTML = `
-            <div class="supertitle">
-                <p style="font-size: 0.9em;"><strong>${destaque.title || 'Título não disponível'}</strong></p>
+            <div class="supertitle" style="font-size: 3vh !important; margin-bottom: 0 !important;">
+                <p style="font-size: inherit !important; margin: 0 !important;"><strong style="font-size: 3vh !important;">${destaque.title || 'Título não disponível'}</strong></p>
             </div>
             <div class="wysiwyg">
                 ${destaque.details ? `<p><span style="font-weight: 400;">${destaque.details}</span></p>` : ''}
