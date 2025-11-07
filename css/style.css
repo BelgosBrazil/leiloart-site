@@ -22645,6 +22645,10 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
     position: relative;
     width: 100%;
     height: 100vh;
+    overflow: hidden;
+}
+
+.production__info .fix--2 {
     overflow: visible;
 }
 
