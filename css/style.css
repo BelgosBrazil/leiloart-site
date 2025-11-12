@@ -20046,7 +20046,6 @@ hr {
     font-weight: 700;
     font-size: 36px;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
     text-decoration: none;
     transition-property: color, opacity;
     transition-duration: 600ms;
@@ -22844,7 +22843,14 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
         }
     } */
 .production__operation {
-    padding: 10vw 0 5vw
+    padding: 10vw 0 5vw;
+    background-color: #4f5E75; /* Tom de azul */
+    /* SEÇÃO OCULTA - mantém no DOM para o scroll funcionar */
+    display: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 @media all and (max-width: 1024px) and (orientation: portrait) {
@@ -22865,6 +22871,16 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
     .production__operation .content {
         width: 100%
     }
+}
+
+.production__operation .supertitle,
+.production__operation .supertitle strong {
+    color: #f9f9f9; /* Cor clara */
+}
+
+.production__operation .wysiwyg,
+.production__operation .wysiwyg p {
+    color: #f9f9f9; /* Cor clara */
 }
 
 .production__operation .content .supertitle .line:nth-child(1) {
@@ -22916,10 +22932,27 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
     } */
 .production__partners {
     padding: 5vw 0 15vw;
+    background-color: #4f5E75; /* Tom de azul */
+    /* SEÇÃO OCULTA - mantém no DOM para o scroll funcionar */
+    display: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .production__partners .columns {
     justify-content: space-between;
+}
+
+.production__partners .supertitle,
+.production__partners .supertitle strong {
+    color: #f9f9f9; /* Cor clara */
+}
+
+.production__partners .wysiwyg,
+.production__partners .wysiwyg p {
+    color: #f9f9f9; /* Cor clara */
 }
 
 .production__partners .content .supertitle .line:nth-child(2) {
@@ -22942,6 +22975,27 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
 
 .production__partners .image img {
     height: calc(100% + 10vw);
+}
+
+.production__footer {
+    background-color: #2E3144; /* Tom de azul escuro */
+}
+
+.production__footer .footer {
+    background-color: #2E3144; /* Tom de azul escuro */
+}
+
+.production__footer .scrolltitle .title,
+.production__footer .menu a,
+.production__footer .supertitle,
+.production__footer .mail,
+.production__footer .legal a,
+.production__footer .copyright {
+    color: #f9f9f9 !important; /* Cor clara */
+}
+
+.production__footer hr {
+    border-color: rgba(249, 249, 249, 0.3); /* Linha sutil clara */
 }
 
 .sustainability__hero {

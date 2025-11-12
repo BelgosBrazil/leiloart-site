@@ -18,8 +18,8 @@
     <meta name="google" content="notranslate">
 
 
-    <title>Production | New</title>
-    <meta name="description" content="">
+    <title>Myne</title>
+    <meta name="description" content="O mundo do design nas suas mãos">
 
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
@@ -32,6 +32,7 @@
     <link href="images/favicon.ico" rel="shortcut icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/intro-animation.css" rel="stylesheet">
     <link href="interactive-banners-slider.css" rel="stylesheet">
@@ -41,6 +42,53 @@
     <style>
         img:is([sizes="auto" i], [sizes^="auto," i]) {
             contain-intrinsic-size: 3000px 1500px
+        }
+
+        /* Estilo do logotipo MYNE com fontes mistas */
+        .logo {
+            display: inline-flex !important;
+            align-items: baseline;
+            letter-spacing: 0.05em;
+            text-transform: none !important;
+        }
+
+        .logo-italiana {
+            font-family: "Italiana", sans-serif !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            text-transform: none !important;
+        }
+
+        .logo-acma {
+            font-family: 'PPAcma', sans-serif !important;
+            font-weight: 600 !important;
+            text-transform: none !important;
+        }
+
+        /* Ajustes para o loader */
+        #loaderTitle {
+            display: inline-flex !important;
+            align-items: baseline;
+            letter-spacing: 0.05em;
+            text-transform: none !important;
+        }
+
+        #loaderTitle .logo-italiana {
+            font-family: "Italiana", sans-serif !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            text-transform: none !important;
+        }
+
+        #loaderTitle .logo-acma {
+            font-family: 'PPAcma', sans-serif !important;
+            font-weight: 600 !important;
+            text-transform: none !important;
+        }
+        
+        /* Garantir que os spans dentro do logo não herdem uppercase */
+        .logo span, #loaderTitle span {
+            text-transform: none !important;
         }
     </style>
 
@@ -872,10 +920,10 @@
                 <section class="production__hero">
                     <div class="container container--full">
                         <div class="megatitle megatitle--small megatitle--center megatitle--outer" data-desktop="" >
-                            <p>1ª PÁGINA DE LEILÕES<br> DE DESIGN & DECORAÇÃO <br>DO BRASIL</p>
+                            <p>O mundo do design<br>nas suas mãos</p>
                         </div>
                         <div class="megatitle megatitle--small megatitle--center megatitle--outer" data-mobile="">
-                            <p>1ª PÁGINA DE LEILÕES<br> DE DESIGN & DECORAÇÃO <br>DO BRASIL</p>
+                            <p>O mundo do design<br>nas suas mãos</p>
                         </div>
                         <!-- <div class="video video--full">
                     <div class="video__player">
@@ -894,125 +942,19 @@ production</p>
 </div>
                 </div> -->
                         <div class="image image--appear" style="--ratio: 100vh;">
-                            <img src="images/hero-furniture.jpg" alt="">
+                            <img src="images/hero-3.jpeg" alt="">
                             <div class="megatitle megatitle--small megatitle--center megatitle--inner white"
                                 data-desktop="">
-                                <p>1ª PÁGINA DE LEILÕES<br> DE DESIGN & DECORAÇÃO <br>DO BRASIL</p>
+                                <p>O mundo do design<br>nas suas mãos</p>
                             </div>
                             <div class="megatitle megatitle--small megatitle--center megatitle--inner white"
                                 data-mobile="">
-                                <p>1ª PÁGINA DE LEILÕES<br> DE DESIGN & DECORAÇÃO <br>DO BRASIL</p>
+                                <p>O mundo do design<br>nas suas mãos</p>
                             </div>
                         </div>
                         
                     </div>
                 </section>
-
-                <section class="production__info">
-                    <div class="stroke stroke--h"></div>
-                    <div class="columns">
-                        <div class="columns__item columns__item--left">
-                            <div class="fix fix--1">
-                                <div class="star">
-                                    <img src="images/star-light-gray.svg" alt="">
-                                </div>
-                                <div class="center">Pronto para redefinir seu modo de vida?</div>
-                            </div>
-                        </div>
-                        <div class="columns__item columns__item--line" data-desktop="">
-                            <div class="stroke stroke--v"></div>
-                        </div>
-                        <div class="columns__item columns__item--center">
-                            <div class="stroke stroke--h" data-mobile=""></div>
-                            <div class="fix fix--2">
-                                <div class="vertical">
-                                    <div class="supertitle supertitle--center" data-desktop="">
-                                        <p><strong>Nosso</strong> destaque</p>
-                                    </div>
-                                </div>
-                                <div class="vertical">
-                                    <div class="supertitle supertitle--center" data-mobile="">
-                                        <p><strong>Nosso</strong> Destaque</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="stroke stroke--h" data-mobile=""></div>
-                        </div>
-                        <div class="columns__item columns__item--line" data-desktop="">
-                            <div class="stroke stroke--v"></div>
-                        </div>
-                        <div class="columns__item columns__item--right" id="destaques-container">
-                            <div class="info">
-                                <div class="content">
-                                    <div class="supertitle">
-                                        <p><strong>Nosso</strong><br>
-                                            Destaque</p>
-                                    </div>
-                                    <div class="wysiwyg">
-                                        <p><span style="font-weight: 400;">Our laundry facility, which we acquired in
-                                                2020, has a long history in Los Angeles. Originally established in 2006,
-                                                our wash house and our staff have been serving the premium denim
-                                                industry with authentic, iconic washes for many years. </span></p>
-                                        <p><span style="font-weight: 400;">Now, we offer a wide range of </span><span
-                                                style="font-weight: 400;">sustainable dyeing and washing
-                                                innovations.</span></p>
-                                    </div>
-                                </div>
-                                <!-- <div class="image" style="--ratio: calc(100vh - 80px);">
-                            <img src="https://starfadesinternational.com/wp-content/themes/sfi/img/design-3d-design.jpg" alt="">
-                        </div> -->
-                            </div>
-                            <div class="stroke stroke--h"></div>
-                            <div class="info">
-                                <div class="content">
-                                    <div class="supertitle">
-                                        <p><strong>Nearshoring</strong><br>
-                                            Hub</p>
-                                    </div>
-                                    <div class="wysiwyg">
-                                        <p><span style="font-weight: 400;">Our L.A. facility serves as a crucial hub
-                                                connecting our customers with production centers across the Western
-                                                Hemisphere. </span></p>
-                                        <p><span style="font-weight: 400;">Whether you need help building a made-in-LA
-                                                collection or a finished-in-LA line — or you need full-package
-                                                production or design SOFISTICAÇÃO assistance for a collection that will
-                                                be produced elsewhere — our team of experts can help. </span></p>
-                                    </div>
-                                </div>
-                                <!-- <div class="image" style="--ratio: calc(100vh - 80px);">
-                            <img src="https://starfadesinternational.com/wp-content/themes/sfi/img/design-3d-design.jpg" alt="">
-                        </div> -->
-                            </div>
-                            <div class="stroke stroke--h"></div>
-                            <div class="info">
-                                <div class="content">
-                                    <div class="supertitle">
-                                        <p><strong>Flexible</strong><br>
-                                            Operating Models</p>
-                                    </div>
-                                    <div class="wysiwyg">
-                                        <p><span style="font-weight: 400;">Timing is everything in fashion. SFI’s
-                                                flexible operating models let customers tailor their production
-                                                according to price, volume and delivery. </span></p>
-                                        <p><span style="font-weight: 400;">Our growing network of production centers in
-                                                the Western Hemisphere help our customers </span><span
-                                                style="font-weight: 400;">realize a significant savings in
-                                                transportation time, allowing them to react to trends in real time,
-                                                better schedule in-store deliveries and avoid retail markdowns.</span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- <div class="image" style="--ratio: calc(100vh - 80px);">
-                            <img src="https://starfadesinternational.com/wp-content/themes/sfi/img/design-3d-design.jpg" alt="">
-                        </div> -->
-                            </div>
-                            <div class="stroke stroke--h"></div>
-                        </div>
-                    </div>
-                    <div class="stroke stroke--h" data-desktop=""></div>
-                </section>
-
-
 
                 <!-- Interactive Banners Slider Section -->
                 <section class="interactive-banners-slider" id="interactiveBannersSlider">
@@ -1033,7 +975,7 @@ production</p>
                 <section class="lojinha-section" id="lojinhaSection">
                     <div class="container">
                         <div class="lojinha-header">
-                            <h2 class="lojinha-title">Nossos produtos</h2>
+                            <h2 class="lojinha-title">Destaques</h2>
                             <p class="lojinha-subtitle">Descubra peças únicas em nossos leilões</p>
                         </div>
 
@@ -1190,24 +1132,30 @@ production</p>
 
                 <!-- Explorar Section -->
                 <section class="explorar-section" id="explorarSection">
-                    <h2 class="explorar-title">Explore Ideias</h2>
+                    <h2 class="explorar-title">Estilos</h2>
                     <div class="explorar-grid">
                         <div class="explorar-item">
                             <a href="/loja?estilo=moderno">
-                                <img src="images/maximalismo.jpeg" alt="Estilo Moderno">
-                                <h3>MAXIMALISMO</h3>
+                                <div class="image-container">
+                                    <img src="images/maximalismo.jpeg" alt="Estilo Moderno">
+                                </div>
+                                <h3>Maximalismo</h3>
                             </a>
                         </div>
                         <div class="explorar-item">
                             <a href="/loja?estilo=classico">
-                                <img src="images/provencal.jpeg" alt="Estilo Clássico">
-                                <h3>PROVENÇAL</h3>
+                                <div class="image-container">
+                                    <img src="images/provencal.jpeg" alt="Estilo Clássico">
+                                </div>
+                                <h3>Provençal</h3>
                             </a>
                         </div>
                         <div class="explorar-item">
                             <a href="/loja?estilo=descolado">
-                                <img src="images/retro.jpeg" alt="Estilo Descolado">
-                                <h3>RETRÔ</h3>
+                                <div class="image-container">
+                                    <img src="images/retro.jpeg" alt="Estilo Descolado">
+                                </div>
+                                <h3>Retrô</h3>
                             </a>
                         </div>
                     </div>
@@ -1358,7 +1306,7 @@ production</p>
 
             <header id="header" class="header ">
                 <div class="container">
-                    <a href="/" class="logo">MYNE</a>
+                    <a href="/" class="logo"><span class="logo-italiana">M</span><span class="logo-acma">y</span><span class="logo-italiana">ne</span></a>
                     <nav data-mobile="">
                         <div class="mask"></div>
                         <div class="content">
@@ -1409,10 +1357,10 @@ production</p>
         <div class="inner">
             <div class="center">
                 <div class="loader-text">
-                    <h1 id="loaderTitle">MYNE</h1>
+                    <h1 id="loaderTitle"><span class="logo-italiana">M</span><span class="logo-acma">y</span><span class="logo-italiana">ne</span></h1>
                 </div>
                 <div class="loader-subtitle">
-                    <p>1ª PÁGINA DE LEILÕES<br> DE DESIGN & DECORAÇÃO <br>DO BRASIL</p>
+                    <p>O mundo do design<br>nas suas mãos</p>
                 </div>
             </div>
         </div>

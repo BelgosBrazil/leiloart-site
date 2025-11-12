@@ -51,7 +51,6 @@
     color: var(--text-primary); /* Navy profundo */
     margin: 0;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
     line-height: 1;
     white-space: nowrap;
 }

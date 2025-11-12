@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Logo MYNE</title>
+    
+    <!-- Fonte Italiana do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    
+    <!-- Importar fontes do projeto -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+            font-family: Arial, sans-serif;
+        }
+
+        .teste-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            min-width: 500px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 18px;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        /* Logo header pequeno */
+        .logo-header {
+            font-size: 36px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: baseline;
+            letter-spacing: 0.05em;
+            color: #1A1A1A;
+            text-decoration: none;
+        }
+
+        /* Logo loader grande */
+        .logo-loader {
+            font-size: 120px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: baseline;
+            letter-spacing: 0.05em;
+            color: #1A1A1A;
+        }
+
+        /* Estilos das fontes */
+        .logo-italiana {
+            font-family: "Italiana", sans-serif !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            text-transform: none !important;
+        }
+
+        .logo-acma {
+            font-family: 'PPAcma', sans-serif !important;
+            font-weight: 600 !important;
+            text-transform: none !important;
+        }
+        
+        /* Garantir que não haja uppercase */
+        .logo-header, .logo-loader {
+            text-transform: none !important;
+        }
+        
+        .logo-header span, .logo-loader span {
+            text-transform: none !important;
+        }
+
+        /* Info */
+        .info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .info div {
+            margin: 8px 0;
+        }
+
+        .info strong {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="teste-section">
+        <h2>Logo no Header (tamanho normal - 36px)</h2>
+        <a href="#" class="logo-header">
+            <span class="logo-italiana">M</span><span class="logo-acma">y</span><span class="logo-italiana">ne</span>
+        </a>
+        
+        <div class="info">
+            <div><strong>M</strong> = Italiana (maiúscula)</div>
+            <div><strong>y</strong> = ACMA (minúscula)</div>
+            <div><strong>ne</strong> = Italiana (minúsculas)</div>
+        </div>
+    </div>
+
+    <div class="teste-section">
+        <h2>Logo no Loader (tamanho grande - 120px)</h2>
+        <div class="logo-loader">
+            <span class="logo-italiana">M</span><span class="logo-acma">y</span><span class="logo-italiana">ne</span>
+        </div>
+        
+        <div class="info">
+            <div><strong>M</strong> = Italiana (maiúscula, serifada elegante)</div>
+            <div><strong>y</strong> = ACMA (minúscula, geométrica)</div>
+            <div><strong>ne</strong> = Italiana (minúsculas, serifadas elegantes)</div>
+        </div>
+    </div>
+
+    <div class="teste-section" style="background: #2E3144;">
+        <h2 style="color: white;">Logo em Fundo Escuro</h2>
+        <a href="#" class="logo-header" style="color: #f9f9f9;">
+            <span class="logo-italiana">M</span><span class="logo-acma">y</span><span class="logo-italiana">ne</span>
+        </a>
+    </div>
+</body>
+</html>
+

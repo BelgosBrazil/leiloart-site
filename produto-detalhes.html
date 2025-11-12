@@ -14,6 +14,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link href="images/favicon.ico" rel="shortcut icon">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="produto-detalhes.css" rel="stylesheet">
     
@@ -47,6 +50,32 @@
             -webkit-backdrop-filter: blur(10px);
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
         }
+
+        /* Estilo do logotipo MYNE com fontes mistas */
+        .logo {
+            display: inline-flex !important;
+            align-items: baseline;
+            letter-spacing: 0.05em;
+            text-transform: none !important;
+        }
+
+        .logo-italiana {
+            font-family: "Italiana", sans-serif !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            text-transform: none !important;
+        }
+
+        .logo-acma {
+            font-family: 'PPAcma', sans-serif !important;
+            font-weight: 600 !important;
+            text-transform: none !important;
+        }
+        
+        /* Garantir que os spans dentro do logo não herdem uppercase */
+        .logo span {
+            text-transform: none !important;
+        }
     </style>
 </head>
 <body class="produto-detalhes-page">
@@ -54,7 +83,7 @@
         <!-- Header -->
         <header id="header" class="header">
             <div class="container">
-                <a href="/" class="logo">MYNE</a>
+                <a href="/" class="logo"><span class="logo-italiana">M</span><span class="logo-acma">y</span><span class="logo-italiana">ne</span></a>
                 <nav data-mobile="">
                     <div class="mask"></div>
                     <div class="content">

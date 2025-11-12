@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { nome: 'Poltronas', imagem: 'poltrona.jpg' },
         { nome: 'Espreguiçadeiras', imagem: 'espreguicadeira.jpg' },
         { nome: 'Mesas de centro', imagem: 'mesa_centro.jpg' },
-        { nome: 'Tabelas', imagem: 'tabelas.jpg' },
         { nome: 'Cadeiras', imagem: 'cadeiras.jpg' },
         { nome: 'Vasos', imagem: 'vasos.jpg' },
         { nome: 'Tapetes', imagem: 'tapetes.jpg' },
