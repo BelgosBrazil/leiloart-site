@@ -8,7 +8,8 @@
 }
 
 .categorias-section {
-    padding: 60px 0;
+    padding-top: 60px;
+    padding-bottom: 30px;
     overflow: hidden;
     background-color: #4f5E75; /* Tom de azul */
 }

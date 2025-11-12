@@ -4,12 +4,13 @@
 }
 
 .explorar-title {
-    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'PPAcma', sans-serif;
     font-size: 2.5rem;
     font-weight: 300;
     color: #f9f9f9; /* Cor clara */
-    text-align: center;
+    text-align: left;
     margin-bottom: 40px;
+    padding-left: 60px;
 }
 
 .explorar-grid {
@@ -38,7 +39,7 @@
 .explorar-item a .image-container::before {
     content: '';
     display: block;
-    padding-top: 100%; /* Aspect ratio 1:1 (aumentado de 75% para 100%) */
+    padding-top: 120%; /* Aspect ratio 1:1.2 - imagens mais altas */
 }
 
 .explorar-item img {
@@ -56,12 +57,13 @@
 }
 
 .explorar-item h3 {
-    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 1.1rem;
+    font-family: 'PPAcma', sans-serif;
+    font-size: 1.8rem;
     font-weight: 400;
     color: #f9f9f9; /* Cor clara */
-    text-align: center;
+    text-align: left;
     margin-top: 20px; /* Espaçamento entre a imagem e o título */
+    padding-left: 20px;
     position: relative;
     z-index: 1;
 }

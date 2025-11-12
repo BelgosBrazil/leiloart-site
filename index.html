@@ -44,51 +44,54 @@
             contain-intrinsic-size: 3000px 1500px
         }
 
-        /* Estilo do logotipo MYNE com fontes mistas */
+        /* Estilo do logotipo MYNE com imagem */
         .logo {
-            display: inline-flex !important;
-            align-items: baseline;
-            letter-spacing: 0.05em;
-            text-transform: none !important;
+            display: flex !important;
+            align-items: center;
         }
 
-        .logo-italiana {
-            font-family: "Italiana", sans-serif !important;
-            font-weight: 400 !important;
-            font-style: normal !important;
-            text-transform: none !important;
+        .logo img {
+            height: 175px;
+            width: auto;
+            display: block;
         }
 
-        .logo-acma {
-            font-family: 'PPAcma', sans-serif !important;
-            font-weight: 600 !important;
-            text-transform: none !important;
+        @media all and (max-width: 1024px) and (orientation: portrait) {
+            .logo img {
+                height: 90px;
+            }
+        }
+        
+        /* Reduzir padding vertical do header */
+        .header {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+        }
+        
+        @media all and (max-width: 1024px) and (orientation: portrait) {
+            .header {
+                padding-top: 8px !important;
+                padding-bottom: 8px !important;
+            }
         }
 
         /* Ajustes para o loader */
         #loaderTitle {
-            display: inline-flex !important;
-            align-items: baseline;
-            letter-spacing: 0.05em;
-            text-transform: none !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        #loaderTitle .logo-italiana {
-            font-family: "Italiana", sans-serif !important;
-            font-weight: 400 !important;
-            font-style: normal !important;
-            text-transform: none !important;
+        #loaderTitle img {
+            height: 240px;
+            width: auto;
+            display: block;
         }
 
-        #loaderTitle .logo-acma {
-            font-family: 'PPAcma', sans-serif !important;
-            font-weight: 600 !important;
-            text-transform: none !important;
-        }
-        
-        /* Garantir que os spans dentro do logo não herdem uppercase */
-        .logo span, #loaderTitle span {
-            text-transform: none !important;
+        @media all and (max-width: 1024px) and (orientation: portrait) {
+            #loaderTitle img {
+                height: 160px;
+            }
         }
     </style>
 
@@ -942,7 +945,7 @@ production</p>
 </div>
                 </div> -->
                         <div class="image image--appear" style="--ratio: 100vh;">
-                            <img src="images/hero-3.jpeg" alt="">
+                            <img src="images/share-image.jpeg" alt="">
                             <div class="megatitle megatitle--small megatitle--center megatitle--inner white"
                                 data-desktop="">
                                 <p>O mundo do design<br>nas suas mãos</p>
@@ -1132,7 +1135,6 @@ production</p>
 
                 <!-- Explorar Section -->
                 <section class="explorar-section" id="explorarSection">
-                    <h2 class="explorar-title">Estilos</h2>
                     <div class="explorar-grid">
                         <div class="explorar-item">
                             <a href="/loja?estilo=moderno">
@@ -1306,7 +1308,7 @@ production</p>
 
             <header id="header" class="header ">
                 <div class="container">
-                    <a href="/" class="logo"><span class="logo-italiana">M</span><span class="logo-acma">y</span><span class="logo-italiana">ne</span></a>
+                    <a href="/" class="logo"><img src="images/logo-myne.png" alt="Myne"></a>
                     <nav data-mobile="">
                         <div class="mask"></div>
                         <div class="content">
@@ -1357,7 +1359,7 @@ production</p>
         <div class="inner">
             <div class="center">
                 <div class="loader-text">
-                    <h1 id="loaderTitle"><span class="logo-italiana">M</span><span class="logo-acma">y</span><span class="logo-italiana">ne</span></h1>
+                    <div id="loaderTitle"><img src="images/logo-myne.png" alt="Myne"></div>
                 </div>
                 <div class="loader-subtitle">
                     <p>O mundo do design<br>nas suas mãos</p>
