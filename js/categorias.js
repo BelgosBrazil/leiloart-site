@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { nome: 'Cozinhas', imagem: 'cozinhas.jpg' },
         { nome: 'Aparadores', imagem: 'aparadores.jpg' },
         { nome: 'Mesas', imagem: 'mesas.jpg' },
-        { nome: 'Console', imagem: 'consoles.jpg' }
+        { nome: 'Console', imagem: 'consoles.jpg' },
+        { nome: 'Camas', imagem: 'camas.jpg' },
+        { nome: 'Pias', imagem: 'pias.jpg' }
     ];
 
     const slider = document.querySelector('.categorias-slider');

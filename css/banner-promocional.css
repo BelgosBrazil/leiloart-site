@@ -1,0 +1,54 @@
+/* Fonte PP Acma */
+@font-face {
+    font-family: 'PP Acma';
+    src: url('../fonts/PPAcma-Semibold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Acma';
+    src: url('../fonts/PPAcma-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+.banner-promocional {
+    padding: 60px 20px;
+    background-color: #4f5E75;
+    /* Mesmo azul das categorias */
+    text-align: center;
+}
+
+.banner-promocional-text {
+    font-family: 'PP Acma', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #f9f9f9;
+    margin: 0;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .banner-promocional {
+        padding: 40px 20px;
+    }
+
+    .banner-promocional-text {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-promocional {
+        padding: 30px 15px;
+    }
+
+    .banner-promocional-text {
+        font-size: 1.5rem;
+    }
+}

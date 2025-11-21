@@ -1,8 +1,16 @@
-/* Fonte Neue Montreal */
+/* Fonte PP Acma */
 @font-face {
-    font-family: 'Neue Montreal';
-    src: url('../fonts/NeueMontreal-Regular.otf') format('opentype');
-    font-weight: normal;
+    font-family: 'PP Acma';
+    src: url('../fonts/PPAcma-Semibold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Acma';
+    src: url('../fonts/PPAcma-Light.otf') format('opentype');
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
@@ -11,15 +19,18 @@
     padding-top: 60px;
     padding-bottom: 30px;
     overflow: hidden;
-    background-color: #4f5E75; /* Tom de azul */
+    background-color: #E8E8E8;
+    /* Cinza claro */
 }
 
 .categorias-title {
-    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'PP Acma', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     text-align: center;
     margin-bottom: 40px;
-    font-size: 2rem;
-    color: #f9f9f9; /* Cor clara */
+    font-size: 3rem;
+    /* Aumentado de 2rem para 3rem para igualar Destaques */
+    color: #2E3244;
+    /* Cor escura para contraste com fundo cinza */
     font-weight: 300;
 }
 
@@ -36,17 +47,21 @@
     overflow-x: auto;
     cursor: grab;
     user-select: none;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .categorias-slider::-webkit-scrollbar {
-    display: none; /* Oculta a barra de rolagem no Chrome, Safari e Opera */
+    display: none;
+    /* Oculta a barra de rolagem no Chrome, Safari e Opera */
 }
 
 .categoria-item {
     flex: 0 0 auto;
-    width: 200px;
+    width: 150px;
+    /* Reduzido de 200px para 150px */
     margin: 0 15px;
     text-align: center;
     position: relative;
@@ -63,23 +78,40 @@
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
-    border: 2px solid rgba(249, 249, 249, 0.3); /* Borda sutil clara */
+    border: 2px solid rgba(46, 50, 68, 0.2);
+    /* Borda escura sutil */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .categoria-item:hover img {
-    border-color: #f9f9f9; /* Borda clara no hover */
-    box-shadow: 0 4px 12px rgba(249, 249, 249, 0.2);
+    border-color: #2E3244;
+    /* Borda escura no hover */
+    box-shadow: 0 4px 12px rgba(46, 50, 68, 0.3);
 }
 
 .categoria-item p {
-    font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'PP Acma', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 1rem;
     font-weight: 500;
-    color: #f9f9f9; /* Cor clara */
+    color: #2E3244;
+    /* Cor escura para contraste com fundo cinza */
     transition: color 0.3s ease;
 }
 
 .categoria-item:hover p {
-    color: #ffffff; /* Branco no hover */
+    color: #1a1d2e;
+    /* Cor ainda mais escura no hover */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .categorias-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .categorias-title {
+        font-size: 2rem;
+    }
 }

@@ -1,13 +1,32 @@
+/* Fonte PP Acma */
+@font-face {
+    font-family: 'PP Acma';
+    src: url('../fonts/PPAcma-Semibold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Acma';
+    src: url('../fonts/PPAcma-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
 .explorar-section {
     padding: 60px 0 80px 0;
-    background-color: #4f5E75; /* Tom de azul */
+    background-color: #4f5E75;
+    /* Tom de azul */
 }
 
 .explorar-title {
-    font-family: 'PPAcma', sans-serif;
+    font-family: 'PP Acma', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 2.5rem;
-    font-weight: 300;
-    color: #f9f9f9; /* Cor clara */
+    font-weight: 600;
+    color: #f9f9f9;
+    /* Cor clara */
     text-align: left;
     margin-bottom: 40px;
     padding-left: 60px;
@@ -32,14 +51,16 @@
 
 .explorar-item a .image-container {
     position: relative;
-    overflow: hidden; /* Contém o zoom da imagem */
+    overflow: hidden;
+    /* Contém o zoom da imagem */
 }
 
 /* Cria um espaço reservado para manter o aspect ratio da imagem */
 .explorar-item a .image-container::before {
     content: '';
     display: block;
-    padding-top: 120%; /* Aspect ratio 1:1.2 - imagens mais altas */
+    padding-top: 120%;
+    /* Aspect ratio 1:1.2 - imagens mais altas */
 }
 
 .explorar-item img {
@@ -49,25 +70,55 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.8s ease;
+    /* Aumentado de 0.4s para 0.8s - 2x mais lento */
 }
 
 .explorar-item:hover img {
-    transform: scale(1.1); /* Zoom apenas visual, contido no container */
+    transform: scale(1.1);
+    /* Zoom apenas visual, contido no container */
 }
 
 .explorar-item h3 {
-    font-family: 'PPAcma', sans-serif;
+    font-family: 'PP Acma', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 1.8rem;
     font-weight: 400;
-    color: #f9f9f9; /* Cor clara */
+    color: #f9f9f9;
+    /* Cor clara */
     text-align: left;
-    margin-top: 20px; /* Espaçamento entre a imagem e o título */
+    margin-top: 20px;
+    /* Espaçamento entre a imagem e o título */
     padding-left: 20px;
     position: relative;
     z-index: 1;
 }
 
 .explorar-item-overlay {
-    display: none; /* Removido */
+    display: none;
+    /* Removido */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .explorar-title {
+        font-size: 2rem;
+        padding-left: 30px;
+        margin-bottom: 30px;
+    }
+
+    .explorar-item h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .explorar-title {
+        font-size: 1.75rem;
+        padding-left: 20px;
+        margin-bottom: 25px;
+    }
+
+    .explorar-item h3 {
+        font-size: 1.3rem;
+    }
 }

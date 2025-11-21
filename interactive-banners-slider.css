@@ -14,6 +14,20 @@ body {
     width: 100%;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid #000000;
+    /* Linha preta fina divisória */
+
+    /* Estado inicial da animação - similar ao image--appear */
+    opacity: 0.0001;
+    transform: translateX(-5vw);
+    will-change: transform, opacity;
+}
+
+/* Estado animado - quando entra na viewport */
+.interactive-banners-slider.animated {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 1.4s ease-out, transform 1.4s ease-out;
 }
 
 /* Carousel container */
@@ -41,7 +55,8 @@ body {
     width: 100%;
     overflow: hidden;
     /* Aspect ratio será definido via JavaScript baseado no banner */
-    padding-top: 56.25%; /* 16:9 por padrão */
+    padding-top: 45%;
+    /* 16:9 reduzido em 20% */
 }
 
 /* Vignette overlay */
@@ -125,10 +140,14 @@ body {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: white; /* Fundo branco */
-    color: var(--text-secondary); /* Símbolo + em cinza escuro (charcoal) */
-    border: 2px solid white; /* Borda branca */
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5), 0 2px 12px rgba(0, 0, 0, 0.3); /* Círculo maior ao redor + sombra */
+    background: white;
+    /* Fundo branco */
+    color: var(--text-secondary);
+    /* Símbolo + em cinza escuro (charcoal) */
+    border: 2px solid white;
+    /* Borda branca */
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5), 0 2px 12px rgba(0, 0, 0, 0.3);
+    /* Círculo maior ao redor + sombra */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -141,9 +160,12 @@ body {
 
 .hotspot-button:hover {
     transform: scale(1.15);
-    background: white; /* Mantém fundo branco no hover */
-    color: var(--text-primary); /* Símbolo + em navy profundo no hover */
-    box-shadow: 0 0 0 4px white, 0 4px 16px rgba(0, 0, 0, 0.4); /* Círculo maior e mais definido + sombra maior */
+    background: white;
+    /* Mantém fundo branco no hover */
+    color: var(--text-primary);
+    /* Símbolo + em navy profundo no hover */
+    box-shadow: 0 0 0 4px white, 0 4px 16px rgba(0, 0, 0, 0.4);
+    /* Círculo maior e mais definido + sombra maior */
 }
 
 .hotspot-button:focus {
@@ -160,7 +182,8 @@ body {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: var(--bg-dark); /* Navy profundo */
+    background: var(--bg-dark);
+    /* Navy profundo */
     backdrop-filter: blur(8px);
     border: 2px solid var(--border-medium);
     box-shadow: 0 4px 16px rgba(46, 49, 68, 0.4);
@@ -195,7 +218,8 @@ body {
 }
 
 .carousel-button:hover {
-    background: var(--accent-secondary); /* Chocolate no hover */
+    background: var(--accent-secondary);
+    /* Chocolate no hover */
     border-color: var(--accent-primary);
     transform: translateY(-50%) scale(1.1);
     box-shadow: 0 6px 24px rgba(127, 97, 87, 0.5);
@@ -233,17 +257,17 @@ body {
         height: 44px;
         opacity: 0.9;
     }
-    
+
     .carousel-button::before {
         width: 12px;
         height: 12px;
         border-width: 2.5px;
     }
-    
+
     .carousel-button--prev {
         left: 16px;
     }
-    
+
     .carousel-button--next {
         right: 16px;
     }
@@ -276,13 +300,15 @@ body {
 .pagination-dot.active {
     width: 24px;
     opacity: 1;
-    background: var(--accent-primary); /* Coral para indicação ativa */
+    background: var(--accent-primary);
+    /* Coral para indicação ativa */
     border-color: var(--accent-primary);
 }
 
 .pagination-dot:hover {
     opacity: 0.8;
-    background: var(--accent-secondary); /* Chocolate no hover */
+    background: var(--accent-secondary);
+    /* Chocolate no hover */
 }
 
 /* Product Modal */
@@ -293,7 +319,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(46, 49, 68, 0.6); /* Navy com transparência */
+    background: rgba(46, 49, 68, 0.6);
+    /* Navy com transparência */
     z-index: 9999;
     backdrop-filter: blur(8px);
     pointer-events: none;
@@ -306,7 +333,8 @@ body {
 
 .modal-content {
     position: fixed;
-    background: var(--bg-secondary); /* Branco */
+    background: var(--bg-secondary);
+    /* Branco */
     border-radius: 8px;
     border: 1px solid var(--border-subtle);
     box-shadow: 0 10px 30px rgba(46, 49, 68, 0.25);
@@ -371,13 +399,15 @@ body {
     color: var(--text-primary);
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
 .product-bid {
     font-size: 0.75rem;
-    color: var(--accent-primary); /* Coral para preços */
+    color: var(--accent-primary);
+    /* Coral para preços */
     font-weight: 600;
     margin: 0;
 }
@@ -415,6 +445,7 @@ body {
     margin: 0;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -427,7 +458,8 @@ body {
 .product-button {
     height: 32px;
     padding: 0 12px;
-    background: var(--accent-primary); /* Coral */
+    background: var(--accent-primary);
+    /* Coral */
     color: var(--text-light);
     border: none;
     border-radius: 4px;
@@ -439,7 +471,8 @@ body {
 }
 
 .product-button:hover {
-    background: var(--accent-secondary); /* Chocolate no hover */
+    background: var(--accent-secondary);
+    /* Chocolate no hover */
     box-shadow: 0 4px 12px rgba(127, 97, 87, 0.4);
     transform: translateY(-2px);
 }
@@ -455,15 +488,15 @@ body {
         top: 12px;
         left: 12px;
     }
-    
+
     .banner-title h3 {
         font-size: 0.875rem;
     }
-    
+
     .carousel-pagination {
         bottom: 12px;
     }
-    
+
     .vignette-left,
     .vignette-right {
         width: 80px;
@@ -490,6 +523,7 @@ body {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -502,13 +536,14 @@ body {
 
 /* Acessibilidade */
 @media (prefers-reduced-motion: reduce) {
+
     .carousel-content,
     .hotspot-button,
     .pagination-dot,
     .product-button {
         transition: none;
     }
-    
+
     .product-modal.show .modal-content {
         animation: none;
     }
