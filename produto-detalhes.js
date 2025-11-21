@@ -120,104 +120,114 @@ class ProdutoDetalhes {
         // Renderiza informações básicas
         document.getElementById('product-title').textContent = this.product.title;
 
+        const categoryEl = document.getElementById('product-category');
+        if (categoryEl && this.product.category) {
+            categoryEl.textContent = this.product.category;
+        }
+
         // Renderiza preço
         const price = this.formatPrice(this.product.currentBid);
         document.getElementById('product-price').textContent = `R$ ${price}`;
 
-        // Renderiza Cor
-        if (this.product.color) {
-            document.getElementById('selected-color-name').textContent = this.product.color;
-            // Tenta encontrar uma cor CSS válida ou usa preto como fallback
-            const colorMap = {
-                'Preto': '#000000',
-                'Branco': '#ffffff',
-                'Vermelho': '#ff0000',
-                'Azul': '#0000ff',
-                'Verde': '#008000',
-                'Amarelo': '#ffff00',
-                'Marrom': '#a52a2a',
-                'Bege': '#f5f5dc',
-                'Cinza': '#808080',
-                'Rosa': '#ffc0cb',
-                'Roxo': '#800080',
-                'Laranja': '#ffa500'
-            };
+        // Inicia o timer
+        this.startTimer();
 
-            const colorHex = colorMap[this.product.color] || '#000000';
-            const colorCircle = document.querySelector('.color-circle');
-            if (colorCircle) {
-                colorCircle.style.backgroundColor = colorHex;
-                colorCircle.setAttribute('aria-label', this.product.color);
+        // Renderiza Atributos
+        this.renderAttributes();
+
+        // Renderiza Descrição
+        this.renderDescription();
+
+        // Configura botão de dar lance
+        const btnDarLance = document.getElementById('btn-dar-lance');
+        if (btnDarLance) {
+            if (this.product.auctionUrl) {
+                btnDarLance.onclick = () => {
+                    window.open(this.product.auctionUrl, '_blank');
+                };
+            } else {
+                btnDarLance.disabled = true;
+                btnDarLance.textContent = 'ENCERRADO';
+                btnDarLance.style.backgroundColor = '#ccc';
+                btnDarLance.style.cursor = 'not-allowed';
             }
         }
+    }
 
-        // Renderiza Tamanho (se disponível)
-        if (this.product.size) {
-            const sizeSelect = document.getElementById('size-select');
-            if (sizeSelect) {
-                // Adiciona o tamanho do produto como opção selecionada se não existir
-                let sizeExists = false;
-                for (let i = 0; i < sizeSelect.options.length; i++) {
-                    if (sizeSelect.options[i].value === this.product.size) {
-                        sizeSelect.selectedIndex = i;
-                        sizeExists = true;
-                        break;
-                    }
-                }
+    renderAttributes() {
+        const attributesContainer = document.getElementById('product-attributes');
+        if (!attributesContainer) return;
 
-                if (!sizeExists) {
-                    const option = document.createElement('option');
-                    option.value = this.product.size;
-                    option.textContent = this.product.size;
-                    option.selected = true;
-                    sizeSelect.add(option);
-                }
+        let html = '';
+
+        // Adiciona atributos padrão se existirem
+        const standardAttributes = [
+            { key: 'material', label: 'Material' },
+            { key: 'condition', label: 'Condição' },
+            { key: 'origin', label: 'Origem' },
+            { key: 'year', label: 'Ano' },
+            { key: 'color', label: 'Cor' },
+            { key: 'size', label: 'Tamanho' }
+        ];
+
+        standardAttributes.forEach(attr => {
+            if (this.product[attr.key]) {
+                html += `
+                    <div class="attribute-item">
+                        <span class="attribute-label">${attr.label}</span>
+                        <span class="attribute-value">${this.product[attr.key]}</span>
+                    </div>
+                `;
             }
-        }
+        });
 
-        // Renderiza Detalhes (Accordion)
-        const detailsContent = document.getElementById('product-details-content');
-        let detailsHtml = '';
-
-        if (this.product.details) {
-            detailsHtml += `<p>${this.product.details}</p>`;
-        }
-
-        // Adiciona outros atributos nos detalhes
-        if (this.product.material) detailsHtml += `<p><strong>Material:</strong> ${this.product.material}</p>`;
-        if (this.product.condition) detailsHtml += `<p><strong>Condição:</strong> ${this.product.condition}</p>`;
-        if (this.product.origin) detailsHtml += `<p><strong>Origem:</strong> ${this.product.origin}</p>`;
-        if (this.product.year) detailsHtml += `<p><strong>Ano:</strong> ${this.product.year}</p>`;
-
+        // Adiciona medidas se existirem
         if (this.product.measurements && Array.isArray(this.product.measurements)) {
-            detailsHtml += '<p><strong>Medidas:</strong><br>';
             this.product.measurements.forEach(m => {
-                detailsHtml += `- ${m.label}: ${m.value}<br>`;
+                html += `
+                    <div class="attribute-item">
+                        <span class="attribute-label">${m.label}</span>
+                        <span class="attribute-value">${m.value}</span>
+                    </div>
+                `;
             });
-            detailsHtml += '</p>';
         }
 
-        if (!detailsHtml) {
-            detailsHtml = '<p>Nenhum detalhe adicional disponível.</p>';
+        // Adiciona atributos personalizados
+        if (this.product.attributes && Array.isArray(this.product.attributes)) {
+            this.product.attributes.forEach(attr => {
+                html += `
+                    <div class="attribute-item">
+                        <span class="attribute-label">${attr.key || attr.label}</span>
+                        <span class="attribute-value">${attr.value}</span>
+                    </div>
+                `;
+            });
         }
 
-        detailsContent.innerHTML = detailsHtml;
+        if (!html) {
+            html = '<p class="no-attributes">Nenhum atributo especificado.</p>';
+        }
 
-        // Configura botão de adicionar ao carrinho (Link do leilão)
-        const btnAddCart = document.getElementById('btn-add-cart');
-        if (this.product.auctionUrl) {
-            btnAddCart.onclick = () => {
-                window.open(this.product.auctionUrl, '_blank');
-            };
+        attributesContainer.innerHTML = html;
+    }
+
+    renderDescription() {
+        const descriptionContainer = document.getElementById('product-description');
+        if (!descriptionContainer) return;
+
+        if (this.product.details || this.product.description) {
+            // Usa details ou description, o que estiver disponível
+            const text = this.product.details || this.product.description;
+            // Converte quebras de linha em <br>
+            descriptionContainer.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`;
         } else {
-            btnAddCart.disabled = true;
-            btnAddCart.textContent = 'INDISPONÍVEL';
-            btnAddCart.style.backgroundColor = '#ccc';
-            btnAddCart.style.cursor = 'not-allowed';
+            descriptionContainer.innerHTML = '<p>Nenhuma descrição disponível.</p>';
         }
     }
 
     renderGallery() {
+        console.log('🖼️ Renderizando galeria...');
         const images = this.product.images || [];
 
         if (images.length === 0) {
@@ -226,24 +236,37 @@ class ProdutoDetalhes {
 
         // Renderiza imagem principal
         const mainImage = document.getElementById('main-image');
-        mainImage.src = images[0];
-        mainImage.alt = this.product.title;
+        if (mainImage) {
+            mainImage.src = images[0];
+            mainImage.alt = this.product.title;
+        }
 
-        // Renderiza dots
-        const dotsContainer = document.getElementById('gallery-dots');
-        dotsContainer.innerHTML = '';
+        // Renderiza thumbnails
+        const thumbnailsContainer = document.getElementById('gallery-thumbnails');
+        if (!thumbnailsContainer) {
+            console.warn('⚠️ Container de thumbnails não encontrado');
+            return;
+        }
+
+        thumbnailsContainer.innerHTML = '';
 
         if (images.length > 1) {
-            images.forEach((_, index) => {
-                const dot = document.createElement('button');
-                dot.className = `gallery-dot ${index === 0 ? 'active' : ''}`;
-                dot.setAttribute('aria-label', `Imagem ${index + 1}`);
+            images.forEach((imgSrc, index) => {
+                const thumb = document.createElement('div');
+                thumb.className = `thumbnail ${index === 0 ? 'active' : ''}`;
+                thumb.setAttribute('aria-label', `Ver imagem ${index + 1}`);
 
-                dot.addEventListener('click', () => {
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = `Thumbnail ${index + 1}`;
+
+                thumb.appendChild(img);
+
+                thumb.addEventListener('click', () => {
                     this.changeImage(index);
                 });
 
-                dotsContainer.appendChild(dot);
+                thumbnailsContainer.appendChild(thumb);
             });
         }
     }
@@ -257,27 +280,27 @@ class ProdutoDetalhes {
 
         // Atualiza imagem principal com fade
         const mainImage = document.getElementById('main-image');
-        mainImage.style.opacity = '0';
+        if (mainImage) {
+            mainImage.style.opacity = '0';
 
-        setTimeout(() => {
-            mainImage.src = images[index];
-            mainImage.onload = () => {
-                mainImage.style.opacity = '1';
-            };
-        }, 200);
+            setTimeout(() => {
+                mainImage.src = images[index];
+                mainImage.onload = () => {
+                    mainImage.style.opacity = '1';
+                };
+                // Fallback caso onload não dispare (imagem em cache)
+                setTimeout(() => mainImage.style.opacity = '1', 50);
+            }, 200);
+        }
 
-        // Atualiza dots ativos
-        const dots = document.querySelectorAll('.gallery-dot');
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
+        // Atualiza thumbnails ativos
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        thumbnails.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === index);
         });
     }
 
-    // Método renderAttributes removido pois agora faz parte dos detalhes no accordion
-    renderAttributes() {
-        // Mantido vazio para compatibilidade se chamado de outros lugares, 
-        // mas a lógica foi movida para renderProduct dentro do accordion
-    }
+
 
     startTimer() {
         const updateTimer = () => {
@@ -389,33 +412,30 @@ class ProdutoDetalhes {
     }
 
     setupEventListeners() {
-        // Botão de favoritar (ícone na imagem)
-        const btnFavoritar = document.getElementById('btn-favoritar-img');
+        // Botão de favoritar (na imagem)
+        const btnFavoritar = document.getElementById('btn-favoritar');
         if (btnFavoritar) {
             btnFavoritar.addEventListener('click', () => {
                 btnFavoritar.classList.toggle('active');
-                const isActive = btnFavoritar.classList.contains('active');
-
-                const svg = btnFavoritar.querySelector('svg');
-                if (isActive) {
-                    svg.style.fill = '#000';
-                } else {
-                    svg.style.fill = 'none';
-                }
+                // Lógica de favoritar seria implementada aqui
             });
         }
 
-        // Accordion de detalhes
-        const accordionTrigger = document.getElementById('details-trigger');
-        const accordionContent = document.getElementById('product-details-content');
+        // Botão de favoritar (texto)
+        const btnFavoritarText = document.getElementById('btn-favoritar-text');
+        if (btnFavoritarText) {
+            btnFavoritarText.addEventListener('click', () => {
+                // Sincroniza com o botão da imagem se existir
+                if (btnFavoritar) btnFavoritar.classList.toggle('active');
 
-        if (accordionTrigger && accordionContent) {
-            accordionTrigger.addEventListener('click', () => {
-                const isExpanded = accordionTrigger.getAttribute('aria-expanded') === 'true';
-                accordionTrigger.setAttribute('aria-expanded', !isExpanded);
-                accordionContent.classList.toggle('active');
-
-                // Opcional: animar ícone se houver
+                // Muda texto ou estilo
+                if (btnFavoritarText.textContent.trim() === 'Favoritar') {
+                    btnFavoritarText.textContent = 'Favoritado';
+                    btnFavoritarText.style.backgroundColor = '#f5f5f5';
+                } else {
+                    btnFavoritarText.textContent = 'Favoritar';
+                    btnFavoritarText.style.backgroundColor = '#fff';
+                }
             });
         }
 
@@ -480,8 +500,14 @@ class ProdutoDetalhes {
     }
 
     showError() {
-        document.getElementById('loading-state').style.display = 'none';
-        document.getElementById('error-state').style.display = 'flex';
+        console.error('❌ Exibindo tela de erro');
+        const loadingState = document.getElementById('loading-state');
+        const productSection = document.getElementById('product-section');
+        const errorState = document.getElementById('error-state');
+
+        if (loadingState) loadingState.style.display = 'none';
+        if (productSection) productSection.style.display = 'none';
+        if (errorState) errorState.style.display = 'flex';
     }
 
     setupHeaderScroll() {

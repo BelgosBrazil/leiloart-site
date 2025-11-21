@@ -17,7 +17,7 @@ html {
 }
 
 body.produto-detalhes-page {
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     overflow-y: auto !important;
     overflow-x: hidden !important;
     height: auto !important;
@@ -94,7 +94,7 @@ body.produto-detalhes-page {
     justify-content: center;
     min-height: 60vh;
     padding: 40px;
-    background-color: #f1f1f1;
+    background-color: #ffffff;
 }
 
 .loading-spinner {
@@ -131,7 +131,7 @@ body.produto-detalhes-page {
     justify-content: center;
     min-height: 60vh;
     padding: 40px;
-    background-color: #f1f1f1;
+    background-color: #ffffff;
 }
 
 .error-content {
@@ -171,370 +171,451 @@ body.produto-detalhes-page {
 }
 
 /* Product Details Section */
-/* Product Details Section */
 .produto-detalhes-section {
-    padding: 0;
+    padding: 40px 0 80px;
     background-color: #ffffff;
-}
-
-.container-fluid {
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
 }
 
 .produto-layout {
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    min-height: calc(100vh - 80px);
-    /* Adjust based on header height */
+    grid-template-columns: 45% 55%;
+    gap: 60px;
+    align-items: start;
 }
 
-/* Gallery (Left Side) */
-.produto-gallery-container {
-    background-color: #f0f0f0;
-    /* Light gray background from image */
+/* Gallery (Left Side) - Inspirado na Prada */
+.produto-gallery {
+    position: sticky;
+    top: 140px;
+}
+
+.gallery-main {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #f5f5f5;
     padding: 40px;
-}
-
-.gallery-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 800px;
+    min-height: 500px;
 }
 
 .main-image {
     width: 100%;
     height: auto;
-    max-height: 80vh;
+    max-height: 600px;
     object-fit: contain;
-    mix-blend-mode: multiply;
-    /* Helps if image has white bg */
 }
 
-.wishlist-icon-btn {
+.wishlist-btn {
     position: absolute;
-    top: 40px;
-    right: 40px;
+    top: 20px;
+    right: 20px;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 10px;
-    z-index: 10;
+    padding: 8px;
+    transition: transform 0.2s ease;
 }
 
-.wishlist-icon-btn svg {
+.wishlist-btn:hover {
+    transform: scale(1.1);
+}
+
+.wishlist-btn svg {
     width: 24px;
     height: 24px;
     stroke: #000;
     transition: fill 0.3s ease;
 }
 
-.wishlist-icon-btn:hover svg {
-    fill: rgba(0, 0, 0, 0.1);
-}
-
-.wishlist-icon-btn.active svg {
+.wishlist-btn.active svg {
     fill: #000;
 }
 
-.gallery-dots {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
+.gallery-thumbnails {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
 }
 
-.gallery-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: 1px solid #000;
-    background-color: transparent;
+.gallery-thumbnails::-webkit-scrollbar {
+    height: 4px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.thumbnail {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
     cursor: pointer;
-    padding: 0;
-    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    background-color: #f5f5f5;
+    padding: 8px;
 }
 
-.gallery-dot.active {
-    background-color: #000;
+.thumbnail:hover,
+.thumbnail.active {
+    border-color: #000;
 }
 
-/* Info (Right Side) */
-.produto-info-container {
-    background-color: #ffffff;
-    padding: 60px 80px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.info-content {
-    max-width: 500px;
+.thumbnail img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Product Info (Right Side) - Inspirado na Prada */
+.produto-info {
+    padding-top: 20px;
+    padding-right: 40px;
+    /* Adicionado padding à direita */
+    max-width: 600px;
+    /* Limita a largura para não ficar muito esticado */
+}
+
+.produto-header {
+    margin-bottom: 20px;
 }
 
 .produto-title {
     font-family: 'Neue Montreal', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 400;
     color: #000;
-    margin-bottom: 8px;
-    line-height: 1.2;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
 }
 
-.price-container {
-    margin-bottom: 40px;
+.produto-category {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 14px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Price Section */
+.produto-price-section {
+    padding: 20px 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 30px;
+}
+
+.price-info {
+    margin-bottom: 15px;
+}
+
+.price-label {
+    display: block;
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 5px;
 }
 
 .price-value {
     font-family: 'Neue Montreal', sans-serif;
-    font-size: 16px;
-    color: #000;
-    font-weight: 400;
-}
-
-/* Options */
-.product-options {
-    margin-bottom: 40px;
-}
-
-.option-group {
-    margin-bottom: 24px;
-}
-
-.option-label {
-    display: block;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
-    margin-bottom: 12px;
     color: #000;
 }
 
-#selected-color-name {
-    font-weight: 400;
-    margin-left: 4px;
-}
-
-.color-options {
+.timer-info {
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
-.color-circle {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 1px solid #e5e5e5;
-    cursor: pointer;
-    position: relative;
-    padding: 0;
-}
-
-.color-circle.selected::after {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 1px solid #000;
-    border-radius: 50%;
-}
-
-/* Size Selector */
-.size-group {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.select-wrapper {
-    flex: 1;
-    position: relative;
-    border: 1px solid #e5e5e5;
-    border-radius: 0;
-    background-color: #fff;
-}
-
-.custom-select {
-    width: 100%;
-    padding: 15px;
-    appearance: none;
-    -webkit-appearance: none;
-    border: none;
-    background: transparent;
+.timer-label {
     font-family: 'Neue Montreal', sans-serif;
-    font-size: 14px;
-    color: #000;
-    cursor: pointer;
-    outline: none;
-}
-
-.chevron-down {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
-    pointer-events: none;
-}
-
-.size-guide-btn {
-    padding: 15px 20px;
-    border: 1px solid #e5e5e5;
-    color: #000;
-    text-decoration: none;
     font-size: 13px;
-    font-weight: 500;
-    white-space: nowrap;
-    transition: all 0.2s ease;
+    color: #666;
 }
 
-.size-guide-btn:hover {
-    border-color: #000;
-}
-
-/* Add to Cart Button */
-.btn-add-cart {
-    width: 100%;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    padding: 18px;
+.timer-value {
     font-family: 'Neue Montreal', sans-serif;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
+    color: #d32f2f;
+}
+
+/* Atributos */
+.produto-atributos {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 15px;
     text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 40px;
     letter-spacing: 0.5px;
 }
 
-.btn-add-cart:hover {
-    background-color: #333;
+.attributes-list {
+    display: grid;
+    gap: 12px;
 }
 
-/* Extra Links */
-.product-extra-links {
+.attribute-item {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.extra-link,
-.accordion-trigger {
-    font-size: 14px;
-    color: #000;
-    text-decoration: none;
-    background: none;
-    border: none;
-    padding: 0;
-    text-align: left;
-    cursor: pointer;
+    justify-content: space-between;
     font-family: 'Neue Montreal', sans-serif;
-    transition: opacity 0.2s ease;
+    font-size: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-.extra-link:hover,
-.accordion-trigger:hover {
-    opacity: 0.7;
+.attribute-label {
+    color: #666;
 }
 
-.accordion-content {
-    display: none;
-    padding-top: 15px;
+.attribute-value {
+    color: #000;
+    font-weight: 500;
+}
+
+/* Description */
+.produto-description {
+    margin-bottom: 30px;
+}
+
+.description-content {
+    font-family: 'Neue Montreal', sans-serif;
     font-size: 14px;
     line-height: 1.6;
     color: #666;
 }
 
-.accordion-content.active {
-    display: block;
+/* Actions */
+.produto-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-/* Chat Button */
-.chat-floating-btn {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+.btn-primary,
+.btn-secondary {
+    flex: 1;
+    padding: 16px 24px;
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+}
+
+.btn-secondary {
     background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.btn-secondary:hover {
+    background-color: #f5f5f5;
+}
+
+/* Share */
+.produto-share {
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.share-label {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 13px;
+    color: #666;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.share-btn {
+    width: 40px;
+    height: 40px;
     border: 1px solid #e5e5e5;
+    background-color: #fff;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
 }
 
-.chat-floating-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+.share-btn:hover {
+    border-color: #000;
+    background-color: #f5f5f5;
 }
 
-.chat-floating-btn svg {
-    width: 24px;
-    height: 24px;
+.share-btn svg {
+    width: 18px;
+    height: 18px;
     color: #000;
+}
+
+/* Related Products */
+.related-products-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.section-title-main {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.related-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 colunas fixas em desktop */
+    gap: 30px;
+}
+
+.related-product-item {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.related-product-item:hover {
+    transform: translateY(-5px);
+}
+
+.related-product-image {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #f5f5f5;
+    margin-bottom: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.related-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Garante que preencha o quadrado */
+    transition: transform 0.5s ease;
+}
+
+.related-product-item:hover .related-product-image img {
+    transform: scale(1.05);
+}
+
+.related-product-info {
+    text-align: center;
+}
+
+.related-product-title {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    margin: 0 0 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.related-product-price {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 14px;
+    color: #666;
+    margin: 0;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
     .produto-layout {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
-    .produto-gallery-container {
-        padding: 60px 20px;
+    .produto-gallery {
+        position: relative;
+        top: 0;
     }
 
-    .produto-info-container {
-        padding: 40px 20px;
+    .gallery-main {
+        min-height: 400px;
+        padding: 30px;
     }
 
-    .gallery-dots {
-        left: 20px;
-        bottom: 20px;
-    }
-
-    .wishlist-icon-btn {
-        right: 20px;
-        top: 20px;
+    .main-image {
+        max-height: 500px;
     }
 }
 
 @media (max-width: 768px) {
+    .breadcrumb-container {
+        padding: 100px 0 15px;
+    }
+
+    .produto-detalhes-section {
+        padding: 30px 0 60px;
+    }
+
     .produto-title {
-        font-size: 24px;
+        font-size: 20px;
     }
 
-    .size-group {
+    .gallery-main {
+        min-height: 300px;
+        padding: 20px;
+    }
+
+    .main-image {
+        max-height: 400px;
+    }
+
+    .produto-actions {
         flex-direction: column;
-        align-items: stretch;
     }
 
-    .size-guide-btn {
-        text-align: center;
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
     }
 
-    .chat-floating-btn {
-        bottom: 20px;
-        right: 20px;
+    .related-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 colunas em mobile */
+        gap: 20px;
     }
 }
