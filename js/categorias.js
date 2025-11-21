@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { nome: 'Aparadores', imagem: 'aparadores.jpg' },
         { nome: 'Mesas', imagem: 'mesas.jpg' },
         { nome: 'Console', imagem: 'consoles.jpg' },
-        { nome: 'Camas', imagem: 'camas.jpg' },
-        { nome: 'Pias', imagem: 'pias.jpg' }
+        { nome: 'Camas', imagem: 'camas.webp' },
+        { nome: 'Pias', imagem: 'pia.jpg' }
     ];
 
     const slider = document.querySelector('.categorias-slider');
