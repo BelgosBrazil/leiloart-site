@@ -226,15 +226,7 @@
 }
 
 /* Responsividade */
-@media (max-width: 1400px) {
-    #lojinhaSection .container {
-        padding: 0 80px;
-    }
 
-    #lojinhaGrid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
 @media (max-width: 1024px) {
     #lojinhaSection {
@@ -246,8 +238,8 @@
     }
 
     #lojinhaGrid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
     }
 }
 
@@ -260,6 +252,8 @@
         padding: 0 40px;
     }
 
+
+
     .lojinha-header h2 {
         font-size: 2.5rem;
     }
@@ -269,13 +263,15 @@
     #lojinhaSection .container {
         padding: 0 20px;
     }
-}
 
-@media (max-width: 480px) {
     #lojinhaGrid {
         grid-template-columns: 1fr;
         gap: 30px;
     }
+}
+
+@media (max-width: 480px) {
+
 
     .lojinha-header h2 {
         font-size: 2rem;

@@ -38,6 +38,38 @@ class InteractiveBannersSlider {
         this.setupModal();
         this.setupKeyboardNavigation();
         this.setupScrollAnimation();
+        this.setupParallax();
+    }
+
+    setupParallax() {
+        const updateParallax = () => {
+            const images = this.container.querySelectorAll('.banner-image');
+
+            images.forEach(img => {
+                const rect = img.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                // Só aplica se o elemento estiver visível
+                if (rect.top < windowHeight && rect.bottom > 0) {
+                    // Calcula quanto do elemento já passou pela tela
+                    // 0 = elemento entrando por baixo
+                    // 1 = elemento saindo por cima
+                    const scrolled = (windowHeight - rect.top) / (windowHeight + rect.height);
+
+                    // Converte para movimento de -50px a +50px
+                    const moveX = (scrolled * 100) - 50;
+
+                    // Aplica o movimento
+                    img.style.transform = `translateX(${moveX}px) scale(1.15)`;
+                }
+            });
+        };
+
+        // Atualiza no scroll
+        window.addEventListener('scroll', updateParallax, { passive: true });
+
+        // Atualiza uma vez no início
+        updateParallax();
     }
 
     // Configurar animação de entrada com scroll - similar ao padrão do site
@@ -111,7 +143,7 @@ class InteractiveBannersSlider {
 
         // Configura aspect ratio
         const aspectRatio = banner.aspectRatio || (16 / 9);
-        container.style.paddingTop = this.toPercent((1 / aspectRatio) * 0.8); // Reduz altura em 20%
+        container.style.paddingTop = this.toPercent((1 / aspectRatio) * 0.9); // Aumentado altura em 10% (0.8 -> 0.9)
 
         // Configura imagem
         image.src = banner.imageUrl;
@@ -122,7 +154,7 @@ class InteractiveBannersSlider {
         }
 
         // Configura título fixo
-        title.textContent = 'Nossos Ambientes';
+
 
         // Cria hotspots
         if (banner.hotspots && banner.hotspots.length > 0) {

@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
         { nome: 'Mesas de centro', imagem: 'mesa_centro.jpg' },
         { nome: 'Cadeiras', imagem: 'cadeiras.jpg' },
         { nome: 'Vasos', imagem: 'vasos.jpg' },
-        { nome: 'Tapetes', imagem: 'tapetes.jpg' },
-        { nome: 'Cozinhas', imagem: 'cozinhas.jpg' },
         { nome: 'Aparadores', imagem: 'aparadores.jpg' },
         { nome: 'Mesas', imagem: 'mesas.jpg' },
         { nome: 'Console', imagem: 'consoles.jpg' },
         { nome: 'Camas', imagem: 'camas.webp' },
-        { nome: 'Pias', imagem: 'pia.jpg' }
+        { nome: 'Pias', imagem: 'pia.jpg' },
+        { nome: 'Tapetes', imagem: 'tapetes.jpg' },
+        { nome: 'Cozinhas', imagem: 'cozinhas.jpg' }
     ];
 
     const slider = document.querySelector('.categorias-slider');

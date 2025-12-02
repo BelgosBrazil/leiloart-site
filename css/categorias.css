@@ -45,6 +45,8 @@
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    padding: 10px 0;
+    /* Adicionado padding para evitar corte no hover */
     cursor: grab;
     user-select: none;
     -ms-overflow-style: none;
@@ -60,8 +62,8 @@
 
 .categoria-item {
     flex: 0 0 auto;
-    width: 150px;
-    /* Reduzido de 200px para 150px */
+    width: 175px;
+    /* Aumentado de 150px para 175px */
     margin: 0 15px;
     text-align: center;
     position: relative;

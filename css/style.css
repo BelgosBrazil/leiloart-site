@@ -22911,6 +22911,47 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
     height: calc(100% + 10vw);
 }
 
+/* Better readability for Portuguese titles in production sections */
+.production__operation .supertitle,
+.production__partners .supertitle {
+    white-space: normal;
+    word-break: normal;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    font-size: clamp(1.9rem, 3.2vw, 56px);
+    line-height: 1.2;
+    text-wrap: balance;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+    max-width: 28ch;
+}
+
+@media all and (max-width: 1024px) and (orientation: portrait) {
+    .production__operation .supertitle,
+    .production__partners .supertitle {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Give a bit more width to text column on desktop */
+.production__operation .content {
+    width: 45vw;
+}
+
+/* Prevent awkward breaks when explicitly requested */
+.nowrap {
+    white-space: nowrap;
+}
+
+@media all and (max-width: 480px) {
+    .nowrap {
+        white-space: normal;
+    }
+}
+
 /* &__content{
         padding: 10vw 0 5vw;
 
