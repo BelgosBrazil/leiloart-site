@@ -16,18 +16,17 @@ body {
     overflow: hidden;
     border-top: 1px solid #000000;
     /* Linha preta fina divisória */
-
-    /* Estado inicial da animação - similar ao image--appear */
-    opacity: 0.0001;
-    transform: translateX(-5vw);
-    will-change: transform, opacity;
+    /* Animação removida: manter visível e estático */
+    opacity: 1;
+    transform: none;
 }
 
 /* Estado animado - quando entra na viewport */
 .interactive-banners-slider.animated {
+    /* Removido efeito de transição/entrada */
     opacity: 1;
-    transform: translateX(0);
-    transition: opacity 1.4s ease-out, transform 1.4s ease-out;
+    transform: none;
+    transition: none;
 }
 
 /* Carousel container */
@@ -39,7 +38,8 @@ body {
 
 .carousel-content {
     display: flex;
-    transition: transform 0.3s ease-in-out;
+    /* Remover transição do movimento entre slides */
+    transition: none;
     width: 100%;
 }
 
@@ -531,7 +531,8 @@ body {
 }
 
 .product-modal.show .modal-content {
-    animation: fadeIn 0.3s ease;
+    /* Remover animação de entrada do modal */
+    animation: none;
 }
 
 /* Acessibilidade */

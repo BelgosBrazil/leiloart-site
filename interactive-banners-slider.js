@@ -37,9 +37,8 @@ class InteractiveBannersSlider {
 
         this.setupModal();
         this.setupKeyboardNavigation();
-        this.setupScrollAnimation();
-        this.setupParallax();
-    }
+        // Animações removidas: sem entrada/scroll/parallax
+}
 
     setupParallax() {
         const updateParallax = () => {
