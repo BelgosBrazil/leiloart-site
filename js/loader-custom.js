@@ -5,11 +5,12 @@
     // Wait for DOM to be ready
     document.addEventListener('DOMContentLoaded', function () {
         const loader = document.getElementById('loader');
-        const loaderText = document.querySelector('#loader .loader-text');
         const header = document.getElementById('header');
         const cookies = document.getElementById('cookie-law-info-bar');
+        const logo1 = document.getElementById('introLogo1');
+        const logo2 = document.getElementById('introLogo2');
 
-        if (!loader || !loaderText || !header) return;
+        if (!loader || !header || !logo1 || !logo2) return;
 
         // Esconder o header e cookies inicialmente
         header.classList.add('hidden-during-intro');
@@ -20,15 +21,16 @@
 
         // Sequência de animação simplificada
         const animationSequence = async () => {
-            // Passo 1: Mostrar o título MYNE no centro
-            await delay(300);
-            loaderText.classList.add('show');
+            // Passo 1: Mostrar o primeiro logo
+            await delay(200);
+            logo1.classList.add('show');
 
-            // Passo 2: Aguardar com o logo visível (tempo total para visualização)
-            // +2 segundos conforme solicitado
-            await delay(6300);
+            // Passo 2: 2s depois, mostrar o segundo logo empilhado
+            await delay(2000);
+            logo2.classList.add('show');
 
-            // Passo 4: Fade out do loader e fade in do header
+            // Passo 3: ~6s depois, sair da intro (reduzido em 2s)
+            await delay(6000);
             header.classList.remove('hidden-during-intro');
             header.classList.add('show-after-intro');
             loader.classList.add('hide-loader');

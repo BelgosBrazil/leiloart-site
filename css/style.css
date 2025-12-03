@@ -22893,7 +22893,7 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
 }
 
 .production__operation .content .wysiwyg {
-    padding-right: 5vw;
+    padding-right: 0;
 }
 
 .production__operation .image {
@@ -22939,7 +22939,7 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
 
 /* Give a bit more width to text column on desktop */
 .production__operation .content {
-    width: 45vw;
+    width: 52vw;
 }
 
 /* Prevent awkward breaks when explicitly requested */

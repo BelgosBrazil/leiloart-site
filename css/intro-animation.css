@@ -31,35 +31,34 @@
     z-index: 10001;
 }
 
-/* Título MYNE */
-#loader .inner .center .loader-text {
-    position: relative;
-    text-align: center;
+/* Sequência de logos empilhados */
+#loader .inner .center .loader-sequence {
+    display: inline-block;
+}
+
+#loader .inner .center .loader-sequence img {
+    display: block;
+    width: min(36vw, 480px);
+    height: auto;
+    margin: 0 auto;
     opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(4px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-#loader .inner .center .loader-text.show {
+#loader .inner .center .loader-sequence img + img {
+    /* remove totalmente o espaço, adaptando a diferentes larguras */
+    margin-top: clamp(-80px, -5vw, -40px);
+}
+
+#loader .inner .center .loader-sequence img.show {
     opacity: 1;
-    transform: scale(1);
-}
-
-#loader .inner .center .loader-text h1 {
-    font-family: var(--font-primary);
-    font-size: 10vw;
-    font-weight: 700;
-    color: var(--text-primary);
-    /* Navy profundo */
-    margin: 0;
-    letter-spacing: 0.1em;
-    line-height: 1;
-    white-space: nowrap;
+    transform: translateY(0);
 }
 
 @media all and (max-width: 1024px) and (orientation: portrait) {
-    #loader .inner .center .loader-text h1 {
-        font-size: 15vw;
+    #loader .inner .center .loader-sequence img {
+        width: min(72vw, 480px);
     }
 }
 
