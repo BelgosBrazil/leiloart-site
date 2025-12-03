@@ -29,8 +29,8 @@
             await delay(2000);
             logo2.classList.add('show');
 
-            // Passo 3: ~6s depois, sair da intro (reduzido em 2s)
-            await delay(6000);
+            // Passo 3: ~3s depois, sair da intro (mais curto)
+            await delay(3000);
             header.classList.remove('hidden-during-intro');
             header.classList.add('show-after-intro');
             loader.classList.add('hide-loader');
