@@ -22925,6 +22925,7 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "kern" 1, "liga" 1;
     max-width: 28ch;
+    text-align: left;
 }
 
 @media all and (max-width: 1024px) and (orientation: portrait) {
@@ -22998,6 +22999,14 @@ body #cliSettingsPopup .cli-modal-dialog .cli-switch input:checked+.cli-slider {
 
 .production__partners .content .supertitle .line:nth-child(3) {
     transform: translateX(4vw);
+}
+
+/* Override: force left alignment and remove decorative transforms in PT sections */
+.production__operation .content .supertitle .line,
+.production__partners .content .supertitle .line {
+    text-align: left !important;
+    transform: none !important;
+    width: 100% !important;
 }
 
 .production__partners .image {

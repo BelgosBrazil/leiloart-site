@@ -25,7 +25,8 @@
             loaderText.classList.add('show');
 
             // Passo 2: Aguardar com o logo visível (tempo total para visualização)
-            await delay(4300);
+            // +2 segundos conforme solicitado
+            await delay(6300);
 
             // Passo 4: Fade out do loader e fade in do header
             header.classList.remove('hidden-during-intro');
